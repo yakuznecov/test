@@ -18,6 +18,10 @@ p {
 	margin-top: 20px;
 }
 
+h2 {
+	margin-bottom: 30px;
+}
+
 .container {
 	max-width: 1180px;
 	margin: 0 auto;
@@ -26,6 +30,7 @@ p {
 
 .wrapper {
 	margin-top: 20px;
+	padding: 20px;
 }
 
 /* Блок по центру абсолют */
@@ -90,6 +95,30 @@ p {
 }
 /* _______________________________ */
 
+.text {
+	margin-top: 100px;
+}
+
+.buttons {
+	margin-top: 100px;
+}
+
+.registration-btn {
+	display: inline-block;
+	width: 175px;
+	height: 40px;
+	font-size: 17px;
+	line-height: 40px;
+	text-align: center;
+	border: none;
+	outline: none;
+	text-decoration: none;
+	border-radius: 23px;
+	cursor: pointer;
+	color: #fff;
+	background: #f3773b;
+}
+
 /* Текст в круге по центру */
 .circle {
 	background-color: #2f80ed;
@@ -105,10 +134,6 @@ p {
 	color: #fff;
 }
 
-/* _______________________________ */
-
-/* Если нужно вычислить адаптивную ширину для абсолютного блока */
-/* height: calc(100vh - 142px); */
 /* _______________________________ */
 
 /* Анимация для открытия меню */
