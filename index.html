@@ -17,16 +17,82 @@
 					</div>
 					<p>Картинка фоном по центру блока</p>
 					<div class="header"></div>
+					<p>Картинка абсолют по центру внизу блока</p>
+					<pre>
+                        .style {
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                            left: 0;
+                            margin: 0 auto;
+                        }  
+                    </pre
+					>
 					<p>Увеличение зоны клика блока</p>
 					<div class="click"></div>
+					<p>Текст в круге по центру</p>
+					<div class="circle">777</div>
 				</div>
 				<div class="buttons">
 					<h2>Кнопки</h2>
 					<a href="https://kinolift.com/ru/signup" target="_blank" class="registration-btn" type="submit">Регистрация</a>
 				</div>
+				<div class="inputs">
+					<h2>INPUT</h2>
+					<input type="text" id="caption" placeholder="Добавить подпись..." class="form-control" />
+				</div>
 				<div class="text">
+					<p>Стиль для текста</p>
+					<span>font-variant-caps: small-caps;</span>
 					<p>Если нужно вычислить адаптивную ширину для абсолютного блока</p>
 					<span>height: calc(100vh - 142px);</span>
+					<p>Анимация для открытия меню</p>
+					<pre>
+                        .chat__menu {
+                            transform: scale(0);
+                            transition: visibility 1s, transform 0.2s linear;
+                            &.active {
+                                visibility: visible;
+                                transition: visibility 1s, transform 0.2s linear;
+                                transform: scale(1);
+                            }
+                        }
+                    </pre
+					>
+					<p>Стиль скролла</p>
+					<pre>
+                        &::-webkit-scrollbar {
+                            width: 4px;
+                            background-color: #fff;
+                        }
+                        &::-webkit-scrollbar-thumb {
+                            background-color: #aaa;
+                            border-radius: 4px;
+                        }
+                    </pre
+					>
+					<p>Блокировка svg в плагине, чтобы вставить картинкой, а не кодом</p>
+					<div>data-skip-inject-svg="true"</div>
+					<p>Адаптив картинок от Netflix</p>
+					<pre>
+                        .wrap {
+                            position: relative;
+                            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+                        }
+                        
+                        .image {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            height: auto;
+                        }
+                    </pre
+					>
+					<p>Запрет изменения элемента</p>
+					<div>flex: none;</div>
+					<p>Переопределяет стиль на стандартный</p>
+					<div>top: auto;</div>
 				</div>
 			</div>
 		</div>

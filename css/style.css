@@ -104,12 +104,14 @@ h2 {
 }
 
 .registration-btn {
-	display: inline-block;
-	width: 175px;
+	display: inline-flex;
+	flex-shrink: 0;
+	justify-content: center;
+	align-items: center;
+	min-width: 215px;
 	height: 40px;
-	font-size: 17px;
-	line-height: 40px;
-	text-align: center;
+	font-size: 20px;
+	padding: 0 20px;
 	border: none;
 	outline: none;
 	text-decoration: none;
@@ -117,6 +119,38 @@ h2 {
 	cursor: pointer;
 	color: #fff;
 	background: #f3773b;
+}
+
+.inputs {
+	margin-top: 100px;
+}
+
+/* 	Стилизация инпута */
+.form-control {
+	display: block;
+	background-color: #333;
+	width: 200px;
+	min-height: 50px;
+	line-height: 22px;
+	border: 1px solid #5b5b5a;
+	overflow: hidden;
+	border-radius: 8px;
+	color: #fff;
+	outline: none;
+	word-break: break-word;
+	font-size: 18px;
+	padding: 12px;
+	pointer-events: auto;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+}
+
+.form-control:focus {
+	border-color: #fff;
+	box-shadow: inset 0 0 0 1px #2f80ed;
+	caret-color: #2f80ed;
 }
 
 /* Текст в круге по центру */
@@ -154,120 +188,6 @@ h2 {
 	}
 }
 
-/* Стиль для текста */
-font-variant-caps: small-caps;
-
-/* Стиль скролла */
-&::-webkit-scrollbar {
-	width: 4px;
-	background-color: #fff;
-}
-&::-webkit-scrollbar-thumb {
-	background-color: #aaa;
-	border-radius: 4px;
-}
-
-/* Картинка абсолют по центру внизу блока */
-.style {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	margin: 0 auto;
-}
-
-/* блокировка svg в плагине, чтобы вставить картинкой, а не кодом */
-
-data-skip-inject-svg="true"
-
-	
-	/* Кнопки */
-
-	.btn-1 {
-	padding: 14px 77px;
-	border: 1px solid #000;
-	color: #000;
-	border-radius: 28px;
-	font-size: 18px;
-	cursor: pointer;
-	outline: none;
-	background: #fff;
-	margin-bottom: 10px;
-}
-
-/* 	Стилизация инпута */
-.form-control {
-	display: block;
-	background-color: #333;
-	width: 200px;
-	min-height: 50px;
-	line-height: 22px;
-	border: 1px solid #5b5b5a;
-	overflow: hidden;
-	border-radius: 8px;
-	color: #fff;
-	outline: none;
-	word-break: break-word;
-	font-size: 18px;
-	padding: 12px;
-	pointer-events: auto;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	box-sizing: border-box;
-}
-
-.form-control:focus {
-	border-color: #fff;
-	box-shadow: inset 0 0 0 1px #2f80ed;
-	caret-color: #2f80ed;
-}
-
-/* Применение класса "ibg" */
-
-.ibg {
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	position: relative;
-}
-
-.ibg img {
-	width: 0;
-	height: 0;
-	position: absolute;
-	top: 0;
-	left: 0;
-	opacity: 0;
-	visibility: hidden;
-}
-
-/* Slider */
-
-.counters-grid .slick-arrow {
-	position: absolute;
-	top: 50%;
-	z-index: 10;
-	font-size: 0;
-	margin-top: -22px;
-}
-
-.counters-grid .slick-arrow.slick-prev {
-	left: 0;
-	background: url('/portal/assets/img/ru/arrow_left-slider.svg') 0 0 no-repeat;
-}
-
-.counters-grid .slick-arrow.slick-next {
-	right: -30px;
-	background: url('/portal/assets/img/ru/arrow_right-slider.svg') 0 0 no-repeat;
-}
-
-.slick-prev:before,
-.slick-next:before {
-	display: none;
-}
-
-/* end Slider */
-
 /* appendArrows: $('.counters-wrapper'), */
 
 /* Сделать линию  */
@@ -282,22 +202,6 @@ data-skip-inject-svg="true"
 	background: #edf1f3;
 }
 
-/* Адаптив от Netflix */
-
-.wrap {
-	position: relative;
-	padding-top: 56.25%; /* 16:9 Aspect Ratio */
-}
-
-.image {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: auto;
-}
-
 h1 {
-	flex: none; /* запрет изменения элемента */
 	top: auto; /*  переопределяет стиль на стандартный */
 }
