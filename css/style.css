@@ -168,6 +168,25 @@ h2 {
 	color: #fff;
 }
 
+.circle1 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	text-align: center;
+	width: 30px;
+	height: 30px;
+	border: 2px solid #2699fb;
+}
+
+.circle1:hover {
+	border: 2px solid #0475d5;
+}
+
+.circle1:hover svg path {
+	stroke: #0475d5;
+}
+
 /* _______________________________ */
 
 /* Анимация для открытия меню */
@@ -192,6 +211,10 @@ h2 {
 
 /* Сделать линию  */
 
+.features-inner {
+	position: relative;
+}
+
 .features-inner:after {
 	position: absolute;
 	content: '';
@@ -199,9 +222,15 @@ h2 {
 	left: 0;
 	width: 100%;
 	height: 1px;
-	background: #edf1f3;
+	background: #000;
 }
 
-h1 {
-	top: auto; /*  переопределяет стиль на стандартный */
+.bootstrap {
+	margin-top: 100px;
+	margin-bottom: 100px;
+}
+
+.javascript {
+	margin-top: 100px;
+	margin-bottom: 100px;
 }
