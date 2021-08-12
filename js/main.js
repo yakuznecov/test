@@ -26,7 +26,7 @@ $('.btn-register-features').on('mousedown', function () {
 	$(this).css('color', '#2699FB');
 });
 
-// Событие нажатия на сенсорных экранах
+// событие схоже с «mousedown», происходит при касании пальцем экрана
 
 $('.btn-register').on('touchstart', function () {
 	$('.btn-register-inner svg path').css('stroke', '#697983');
@@ -34,4 +34,11 @@ $('.btn-register').on('touchstart', function () {
 	$('.btn-register-inner svg path').css('transition', '0.3s');
 	$('.btn-register-inner').css('transition', '0.3s');
 	$(this).css('color', '#697983');
+});
+
+// убираем палец с экрана, ака «mouseup»
+
+$('.mobile-registration-btn').on('touchend', function () {
+	$(this).css('color', '#fff');
+	$(this).css('background-color', '#f3773b');
 });

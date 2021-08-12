@@ -11,6 +11,7 @@
 		<div class="wrapper">
 			<div class="container">
 				<div class="main">
+					<img src="img/mobile-registration.svg" alt="" />
 					<a href="#bootstrap">Bootstrap</a>
 					<a href="#javascript">Javascript</a>
 					<p>Блок по центру другого блока</p>
@@ -107,6 +108,21 @@
 					<div>flex: none;</div>
 					<p>Переопределяет стиль на стандартный</p>
 					<div>top: auto;</div>
+					<p>Если есть небольшой горизонтальный скролл и дергается страница</p>
+					<pre>
+						html {
+							width: 100%;
+							max-width: 100%;
+							overflow-x: hidden;
+						}
+						
+						body {
+							width: 100%;
+							max-width: 100%;
+							overflow-x: hidden;
+						}
+					</pre
+					>
 				</div>
 
 				<section class="bootstrap" id="bootstrap">
@@ -128,6 +144,7 @@
 					<div><b>var(--bs-white);</b> - переменная белого цвета</div>
 					<div><b>show</b> - элемент в аккордеоне будет развернут</div>
 					<div><b>collapsed</b> - элемент в аккордеоне будет свернут, располагается в кнопке</div>
+					<div><b>Адаптивное изображение</b> - <code>class="img-fluid"</code></div>
 				</section>
 
 				<section class="javascript" id="javascript">
@@ -135,10 +152,6 @@
 					<p>Изменение фона и цвета ссылки при нажатии</p>
 					<code> $('.btn-more-empty').on('click', function () { $(this).css('background-color', '#3f6a6d'); $(this).css('color', '#fff'); $(this).css('border-color', '#3f6a6d'); }); </code>
 				</section>
-				<svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path d="M1.69672 8.94672L7 14.25L12.3033 8.94672" stroke="#2699FB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-					<path d="M7 1.75V14.25" stroke="#2699FB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-				</svg>
 			</div>
 		</div>
 	</body>
