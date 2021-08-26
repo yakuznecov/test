@@ -5,16 +5,17 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>test</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous" />
 		<link rel="stylesheet" href="css/style.css" />
 	</head>
 	<body>
 		<div class="wrapper">
 			<div class="container">
 				<div class="main">
-					<img src="img/mobile-registration.svg" alt="" />
-					<img src="img/Girl_img.svg" alt="" />
-					<img src="img/Man_img.svg" alt="" />
-					<a href="#bootstrap">Bootstrap</a>
+					<a href="bootstrap.html">Bootstrap</a>
 					<a href="#javascript">Javascript</a>
 					<p>Блок по центру другого блока</p>
 					<div class="block-1">
@@ -37,6 +38,14 @@
 					<div class="click"></div>
 					<p>Текст в круге по центру</p>
 					<div class="circle">777</div>
+					<p>Иконка на фон</p>
+					<pre>
+						.moderation-date {
+							background: url(../images/icons/date-icon.svg) 0 0 no-repeat;
+							padding-left: 20px;
+						}
+					</pre
+					>
 					<p>иконка svg в круге с hover эффектом</p>
 					<div class="circle1">
 						<svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,6 +54,20 @@
 						</svg>
 					</div>
 					<p class="features-inner">Cделать линию на after</p>
+				</div>
+				<div class="flex">
+					<h2>FLEX</h2>
+					<p>Ширину блока flex можно задать в % с таким кодом</p>
+					<pre>
+					.text {
+						display: flex;
+						align-items: center;
+						flex: 0 0 494/1240 * 100%;
+					}</pre
+					>
+					<p>Позволяем объекту flex увеличиваться. Если поставить на контейнер, то внутри элементы будут на всю ширину контейнера</p>
+					<span>flex: 1 1 auto;</span> <br />
+					<span>width: 100%; - блоку внутри контейнера, внутри которого еще flex элементы</span>
 				</div>
 				<div class="buttons">
 					<h2>Кнопки</h2>
@@ -57,6 +80,8 @@
 					<input type="text" id="caption" placeholder="Добавить подпись..." class="form-control" />
 				</div>
 				<div class="text">
+					<p>Слева и справа от заголовка линии</p>
+					<div class="title">Заголовок</div>
 					<p>Оформление кода</p>
 					<code>.accordion-flush</code>
 					<p>Стиль для текста</p>
@@ -108,6 +133,8 @@
 					>
 					<p>Запрет изменения элемента</p>
 					<div>flex: none;</div>
+					<p>Прижать flex элемент к низу контейнера</p>
+					<div>margin-top: auto;</div>
 					<p>Переопределяет стиль на стандартный</p>
 					<div>top: auto;</div>
 					<p>Если есть небольшой горизонтальный скролл и дергается страница</p>
@@ -130,11 +157,16 @@
 				<section class="bootstrap" id="bootstrap">
 					<h2>Bootstrap</h2>
 					<p>Классы</p>
+					<div><b>rounded</b> - скругление изображения</div>
+					<div><b>img-thumbnail</b> - добавляет рамку к картинке на сайте</div>
+					<div><b>float-start float-end</b> - разнесение изображений по краям контейнера</div>
+					<div><b>ms-auto</b> - margin left</div>
+					<div><b>me-auto</b> - margin right</div>
 					<div><b>text-center</b> - центрирование элемента</div>
 					<div><b>align-items-center</b> - центрирование элемента</div>
 					<div><b>justify-content-center</b> - центрирование элемента</div>
 					<div><b>d-block</b> - сделать блочным</div>
-					<div><b>mx-auto</b> - выравнивание элемента по центру</div>
+					<div><b>mx-auto</b> - выравнивание блочного элемента по центру</div>
 					<div><b>fw-bold</b> - жирный текст 700</div>
 					<div><b>text-uppercase</b> - текст в верхнем регистре</div>
 					<div><b>fst-italic</b> - текст курсивом</div>
@@ -156,5 +188,10 @@
 				</section>
 			</div>
 		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+		<script src="js/main.js"></script>
+		<script src="js/functions.js"></script>
 	</body>
 </html>

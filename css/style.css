@@ -33,6 +33,10 @@ h2 {
 	padding: 20px;
 }
 
+p {
+	border-top: 1px solid #000;
+}
+
 /* Блок по центру абсолют */
 
 .block-1 {
@@ -233,4 +237,47 @@ h2 {
 .javascript {
 	margin-top: 100px;
 	margin-bottom: 100px;
+}
+
+/* Слева и справа от заголовка линии */
+
+.title {
+	overflow: hidden;
+	text-transform: uppercase;
+	color: #000;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.title::before {
+	margin-left: -90%;
+}
+
+.title::after {
+	margin-right: -90%;
+}
+
+.title::before,
+.title::after {
+	content: '';
+	display: inline-block;
+	vertical-align: middle;
+	box-sizing: border-box;
+	width: 90%;
+	height: 1px;
+	background: #000;
+	border: solid #fff;
+	border-width: 0 10px;
+}
+
+/* functions */
+
+.out-1 {
+	width: 100px;
+	height: 100px;
+	background: orangered;
+}
+
+.flex {
+	margin-top: 50px;
 }
