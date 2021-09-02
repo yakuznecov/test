@@ -1,0 +1,31 @@
+.tape-setting-typeBtn {
+	margin-top: 13px;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.typeBtn {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	height: 36px;
+	font-size: 14px;
+	padding: 0 10px;
+	outline: none;
+	flex: 1 1 83px;
+	margin-right: 9px;
+	text-decoration: none;
+	text-transform: uppercase;
+	border-radius: 4px;
+	cursor: pointer;
+	color: #212529;
+	background: #fff;
+	margin-bottom: 9px;
+	border: 1px solid #ccc;
+}
+
+.typeBtn:nth-child(3) {
+	margin-right: 0;
+}

@@ -1,0 +1,40 @@
+.buttons h1 {
+	margin-bottom: 30px;
+}
+
+.btn-1 {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-size: 24px;
+	line-height: normal;
+	font-weight: 500;
+	height: 56px;
+	color: #fff;
+	box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.12);
+	width: 56px;
+	border-radius: 50%;
+	background: #007bff url(../img/filter.svg) 50% 50% no-repeat;
+	cursor: pointer;
+}
+
+.btn-2 {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-size: 24px;
+	line-height: normal;
+	font-weight: 500;
+	width: 88px;
+	background-color: #80bdff;
+	border-radius: 100px;
+	height: 56px;
+	color: #fff;
+	box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.12);
+	cursor: pointer;
+	margin-top: 20px;
+}
