@@ -20,13 +20,38 @@
 					<h1>Кнопки</h1>
 					<div class="btn-1"></div>
 					<div class="btn-2">152</div>
+					<!-- 3 цветные кнопки с классом active -->
+					<p>3 цветные кнопки с классом active</p>
+					<div class="tape-setting-rateBtn">
+						<a id="rateBtn-lite" href="#" class="rateBtn --lite active" type="submit">lite</a>
+						<a id="rateBtn-pro" href="#" class="rateBtn --pro active" type="submit">pro</a>
+						<a id="rateBtn-vip" href="#" class="rateBtn --vip" type="submit">vip</a>
+					</div>
+					<p>Кнопка регистрации</p>
+					<a href="https://kinolift.com/ru/signup" target="_blank" class="registration-btn" type="submit">Регистрация</a>
+
+					<p>Кнопка переключения</p>
+					<!-- Start: Кнопка переключения карточек -->
+					<div class="tape-cart-group">
+						<div class="switch-button">
+							<span class="active"></span>
+							<button class="switch-button-case left active-case">Карточки с фото</button>
+							<button class="switch-button-case right">Карточки без фото</button>
+						</div>
+					</div>
+					<!-- End: Кнопка переключения карточек -->
+
+					<p>Корректировка стилей buttons, a для айфонов</p>
+					<span> a, button { -webkit-appearance: none; } </span>
 				</div>
 			</div>
 		</div>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-		<script src="js/main.js"></script>
+		<script src="js/jquery.js"></script>
+
 		<script src="js/functions.js"></script>
+		<script src="js/main.js"></script>
 	</body>
 </html>

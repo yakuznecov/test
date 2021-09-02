@@ -38,7 +38,7 @@ count2();
 count2();
 
 // Увеличение блока при наведении мышки
-document.querySelector('.out-1').addEventListener('mousemove', blockWidth); /* имя функции без скобок */
+// document.querySelector('.out-1').addEventListener('mousemove', blockWidth); /* имя функции без скобок */
 
 let w = 100;
 

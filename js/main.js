@@ -1,44 +1,32 @@
-// изменение цвета строки и svg при наведении и ухода мышки с объекта
+var switchButton = document.querySelector('.switch-button');
+var switchBtnRight = document.querySelector('.switch-button-case.right');
+var switchBtnLeft = document.querySelector('.switch-button-case.left');
+var activeSwitch = document.querySelector('.active');
 
-$('.btn-register-features').on('mouseover', function () {
-	$('.features-inner-register svg path').css('stroke', '#0475D5');
-	$('.features-inner-register').css('border-color', '#0475D5');
-	$('.features-inner-register svg path').css('transition', '0.3s');
-	$('.features-inner-register').css('transition', '0.3s');
-	$(this).css('color', '#0475D5');
-});
+function switchLeft() {
+	switchBtnRight.classList.remove('active-case');
+	switchBtnLeft.classList.add('active-case');
+	activeSwitch.style.left = '0%';
+}
 
-$('.btn-register-features').on('mouseout', function () {
-	$('.features-inner-register svg path').css('stroke', '#2699FB');
-	$('.features-inner-register').css('border-color', '#2699FB');
-	$('.features-inner-register svg path').css('transition', '0.3s');
-	$('.features-inner-register').css('transition', '0.3s');
-	$(this).css('color', '#2699FB');
-});
+function switchRight() {
+	switchBtnRight.classList.add('active-case');
+	switchBtnLeft.classList.remove('active-case');
+	activeSwitch.style.left = '50%';
+}
 
-// Событие при нажатии левой кнопки мыши
+switchBtnLeft.addEventListener(
+	'click',
+	function () {
+		switchLeft();
+	},
+	false
+);
 
-$('.btn-register-features').on('mousedown', function () {
-	$('.features-inner-register svg path').css('stroke', '#2699FB');
-	$('.features-inner-register').css('border-color', '#2699FB');
-	$('.features-inner-register svg path').css('transition', '0.3s');
-	$('.features-inner-register').css('transition', '0.3s');
-	$(this).css('color', '#2699FB');
-});
-
-// событие схоже с «mousedown», происходит при касании пальцем экрана
-
-$('.btn-register').on('touchstart', function () {
-	$('.btn-register-inner svg path').css('stroke', '#697983');
-	$('.btn-register-inner').css('border-color', '#697983');
-	$('.btn-register-inner svg path').css('transition', '0.3s');
-	$('.btn-register-inner').css('transition', '0.3s');
-	$(this).css('color', '#697983');
-});
-
-// убираем палец с экрана, ака «mouseup»
-
-$('.mobile-registration-btn').on('touchend', function () {
-	$(this).css('color', '#fff');
-	$(this).css('background-color', '#f3773b');
-});
+switchBtnRight.addEventListener(
+	'click',
+	function () {
+		switchRight();
+	},
+	false
+);
