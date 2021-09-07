@@ -1,3 +1,9 @@
+.grid-container {
+	max-width: 1170px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
 .tape-setting-typeBtn {
 	margin-top: 13px;
 	display: flex;
@@ -28,4 +34,32 @@
 
 .typeBtn:nth-child(3) {
 	margin-right: 0;
+}
+
+.utp-list {
+	margin-left: -15px;
+	margin-right: -15px;
+	display: flex;
+	flex-wrap: wrap;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.utp-item {
+	padding: 30px;
+	background-color: #fff;
+
+	border-radius: 20px;
+	border: 1px solid #ccc;
+	color: #383c46;
+	font-size: 14px;
+	text-align: center;
+	width: calc(25% - 30px);
+	margin-left: 15px;
+	margin-right: 15px;
+	flex: 0 1 auto;
+	max-width: 100%;
+	word-wrap: break-word;
+	margin-bottom: 0;
 }
