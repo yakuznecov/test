@@ -25,3 +25,43 @@
 	box-shadow: inset 0 0 0 1px #2f80ed;
 	caret-color: #2f80ed;
 }
+
+.search {
+	display: flex;
+	align-items: center;
+	min-height: 64px;
+	margin-top: 20px;
+	background-color: #2f80ed;
+}
+
+.burger-menu-search {
+	background: rgba(38, 153, 251, 0.55);
+	display: flex;
+	align-items: center;
+	height: 48px;
+	padding: 0 16px;
+	border-radius: 4px;
+}
+
+.burger-menu-search input {
+	background: transparent;
+	width: 100%;
+	border: 0;
+	outline: none;
+	font-size: 17px;
+}
+
+.burger-menu-search button {
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+}
+
+.burger-menu-search input::placeholder {
+	color: #fff;
+}
+
+.burger-menu-search input:focus {
+	box-shadow: none;
+	color: #fff;
+}

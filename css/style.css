@@ -1,3 +1,5 @@
+@import 'mobile';
+
 *,
 *:before,
 *:after {
@@ -116,17 +118,15 @@ button {
 
 /* Текст в круге по центру */
 .circle {
-	background-color: #2f80ed;
-	border-radius: 50%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	font-size: 10px;
-	font-weight: bold;
-	width: 30px;
-	height: 30px;
+	display: inline-block;
+	font-size: 11px;
+	line-height: 20px;
+	height: 20px;
 	color: #fff;
+	padding: 0 6px;
+	box-shadow: 0 2px 12px rgb(0 0 0 / 12%);
+	border-radius: 100px;
+	background: #219653;
 }
 
 .circle1 {

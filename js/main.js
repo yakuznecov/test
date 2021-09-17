@@ -30,3 +30,26 @@ switchBtnRight.addEventListener(
 	},
 	false
 );
+
+// 4 кнопки с одной активной при переключении
+$('.menu-header__info-item').click(function () {
+	$(this).siblings().removeClass('active');
+	$(this).addClass('active');
+});
+
+// Иконки приложений
+$('.appStore-box')
+	.mouseover(function () {
+		$('.appStoreDark').show();
+	})
+	.mouseout(function () {
+		$('.appStoreDark').hide();
+	});
+
+$('.googlePlay-box')
+	.mouseover(function () {
+		$('.googlePlayDark').show();
+	})
+	.mouseout(function () {
+		$('.googlePlayDark').hide();
+	});

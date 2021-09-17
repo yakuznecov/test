@@ -45,3 +45,13 @@ $('.mobile-registration-btn').on('touchend', function () {
 
 // Метод предотвращает дальнейшее выполнение события в дереве
 // event.stopPropagation();
+
+// При наведении мышки на ребенка, обращение идет к рядом стоящему с ним в блоке элементу, метод .siblings() и у ссылки меняется цвет и пропадает
+
+$('.castings-menu-agent').on('mouseover', function () {
+	$(this).siblings().addClass('active');
+});
+
+$('.castings-menu-agent').on('mouseout', function () {
+	$(this).siblings().removeClass('active');
+});
