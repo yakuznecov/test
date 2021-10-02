@@ -1,0 +1,49 @@
+.transition {
+	transition: all 0.2s;
+}
+
+&:hover {
+	color: #f58854;
+}
+
+.opacity {
+	opacity: 0;
+	visibility: hidden;
+
+	opacity: 1;
+	visibility: visible;
+}
+
+button {
+	cursor: pointer;
+	outline: none;
+	background: transparent;
+	border: 0;
+	padding: 0;
+}
+
+.background {
+	background: url(../images/icons/date-icon.svg) 0 0 no-repeat;
+	min-height: 563px; /* высота обязательно */
+}
+
+.color {
+	color: rgba(255, 255, 255, 0.5);
+	color: rgba(0, 0, 0, 0.7);
+}
+
+.border {
+	border: 1px solid #fff;
+
+	border-top: 1px solid #6e7478;
+}
+
+.transform {
+	transform: translate(-50%, -50%);
+	transform: translateY(-50%);
+}
+
+.after {
+	content: '';
+	position: absolute;
+}
