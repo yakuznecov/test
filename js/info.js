@@ -55,3 +55,11 @@ $('.castings-menu-agent').on('mouseover', function () {
 $('.castings-menu-agent').on('mouseout', function () {
 	$(this).siblings().removeClass('active');
 });
+
+// закрытие меню вне его
+$(document).mouseup(function (e) {
+	var modal = $('.menu-points-mobile');
+	if (!modal.is(e.target) && modal.has(e.target).length === 0) {
+		$('.menu-points-mobile').removeClass('active');
+	}
+});
