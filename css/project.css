@@ -30,12 +30,13 @@ button {
 .color {
 	color: rgba(255, 255, 255, 0.5);
 	color: rgba(0, 0, 0, 0.7);
+	color: #f15e17; /* цвет при ховере кнопки */
 }
 
 .border {
 	border: 1px solid #fff;
 
-	border-top: 1px solid #6e7478;
+	border-top: 1px solid #e3e3e3; /* Разделитель в дропдаунах */
 }
 
 .transform {
@@ -46,4 +47,15 @@ button {
 .after {
 	content: '';
 	position: absolute;
+}
+
+/* для темной кнопки */
+&:active {
+	background: #fff;
+	color: #63686b;
+}
+
+/* для кнопки далее */
+&:active {
+	background: #0588f8;
 }
