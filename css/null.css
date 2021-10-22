@@ -1,7 +1,7 @@
 * {
-	padding: 0px;
-	margin: 0px;
-	border: 0px;
+	padding: 0;
+	margin: 0;
+	border: 0;
 }
 *,
 *:before,
@@ -31,7 +31,7 @@ body {
 	min-width: 320px;
 }
 body {
-	font-family: 'Roboto';
+	font-family: 'Roboto', sans-serif;
 	text-rendering: optimizeLegibility;
 	-ms-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;
@@ -40,7 +40,7 @@ body {
 input,
 button,
 textarea {
-	font-family: 'Roboto';
+	font-family: 'Roboto', sans-serif;
 }
 input::-ms-clear {
 	display: none;

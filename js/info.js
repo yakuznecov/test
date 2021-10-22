@@ -63,3 +63,43 @@ $(document).mouseup(function (e) {
 		$('.menu-points-mobile').removeClass('active');
 	}
 });
+
+// Задачи
+
+// что выведет?
+console.log(1);
+setTimeout(() => console.log(2));
+setTimeout(console.log(3));
+console.log(4);
+// 1-3-4-2 setTimeout в третьем случае примет первым аргументом из двух undefined, и не будет добавлять в макротаски и сразу выполнит console.log
+
+// Реализуйте функцию convertText(), которая принимает на вход строку и, если первая буква не заглавная, возвращает перевернутый вариант исходной строки. Если первая буква заглавная, то строка возвращается без изменений. Если на вход передана пустая строка, функция должна вернуть пустую строку.
+const convertText = (text) => {
+	if (text === '') {
+		return '';
+	}
+
+	const reversable = text[0] !== text[0].toUpperCase();
+	return reversable ? reverse(text) : text;
+};
+
+// Реализуйте функцию getNumberExplanation(), которая принимает на вход число и возвращает объяснение этого числа. Если для числа нет объяснения, то возвращается null:
+const getNumberExplanation = (number) => {
+	switch (number) {
+		case 666:
+			return 'devil number';
+		case 7:
+			return 'prime number';
+		case 42:
+			return 'answer for everything';
+		default:
+			return null;
+	}
+};
+
+getNumberExplanation(8); // null
+
+// Объяснения есть только для указанных ниже чисел
+getNumberExplanation(666); // 'devil number'
+getNumberExplanation(42); // 'answer for everything'
+getNumberExplanation(7); // 'prime number'
