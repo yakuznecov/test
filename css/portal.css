@@ -26,3 +26,12 @@ img {
 	min-height: 64px;
 	background: #0064c1;
 }
+
+/* Start: Мы предлагаем */
+
+.offers-wrapper {
+	text-align: center;
+	margin-top: 96px;
+}
+
+/* End: Мы предлагаем */

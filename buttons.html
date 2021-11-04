@@ -38,6 +38,8 @@
 
 					<a href="#" class="tariff-control-btn" type="submit">Управление тарифом</a>
 
+					<button class="btn-4">Поставить оценку</button>
+
 					<p>Кнопка переключения</p>
 					<!-- Start: Кнопка переключения карточек -->
 					<div class="tape-cart-group">
@@ -51,12 +53,38 @@
 
 					<button class="language-btn-mobile"></button>
 
+					<div class="leave-feedback-mobile-btn">
+						<div class="leave-feedback-mobile-radio">
+							<input id="radio-1" type="radio" name="radio" value="1" checked />
+							<label for="radio-1">Да</label>
+						</div>
+						<div class="leave-feedback-mobile-radio">
+							<input id="radio-2" type="radio" name="radio" value="2" checked />
+							<label for="radio-2">Нет</label>
+						</div>
+						<div class="leave-feedback-mobile-radio">
+							<input id="radio-3" type="radio" name="radio" value="3" checked />
+							<label for="radio-3">Затрудняюсь ответить</label>
+						</div>
+					</div>
+					<!-- Area -->
+					<div class="leave-feedback-mobile-area">
+						<textarea class="feedback-area" name="text" placeholder="Текст вашего отзыва…" autofocus></textarea>
+					</div>
+
 					<!-- 4 кнопки с одной активной при переключении -->
 					<div class="menu-header__info">
 						<button class="menu-header__info-item active">Новые</button>
 						<button class="menu-header__info-item">Ожидающие ответа</button>
 						<button class="menu-header__info-item">Активные</button>
 						<button class="menu-header__info-item">Архив</button>
+					</div>
+
+					<!-- Checkbox switch -->
+
+					<div class="content-checkbox">
+						<input class="input" type="checkbox" id="casting-switch-1" />
+						<label for="casting-switch-1">Toggle</label>
 					</div>
 
 					<div class="profile-menu-footer-links">
@@ -70,69 +98,14 @@
 						</div>
 					</div>
 
+					<div class="main-header-top-search">
+						<button type="submit"><img src="img/search-icon-16.svg" /></button>
+						<input type="text" placeholder="Актёры в этом кастинге" />
+					</div>
+
 					<p>Корректировка стилей buttons, a для айфонов</p>
 					<span> a, button { -webkit-appearance: none; } </span>
-
-					<svg width="104" height="24" viewBox="0 0 104 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<g filter="url(#filter0_i)">
-							<path d="M3.08276 23.7309H0V6.61768H3.08276V14.7342L10.0001 6.61768H13.7095L6.49132 14.5875L14.1606 23.7309H10.2508L3.08276 14.9053V23.7309Z" fill="white" />
-							<path d="M19.6716 23.731H16.5889V10.896H19.6716V23.731Z" fill="white" />
-							<path d="M36.5107 10.896V23.731H34.0545L26.686 15.7611V23.731H23.8037V10.896H26.2599L33.6284 18.8904V10.896H36.5107Z" fill="white" />
-							<path d="M39.3467 17.3504C39.3467 15.4434 40.0318 13.8707 41.4018 12.632C42.7886 11.3608 44.5597 10.7251 46.7152 10.7251C48.8706 10.7251 50.6417 11.3281 52.0285 12.5342C53.4153 13.7403 54.1088 15.3457 54.1088 17.3504C54.1088 19.2898 53.407 20.8871 52.0034 22.142C50.6334 23.3807 48.8706 24.0001 46.7152 24.0001C44.5597 24.0001 42.7886 23.397 41.4018 22.1909C40.0318 21.0012 39.3467 19.3876 39.3467 17.3504ZM42.6049 17.3504C42.6049 18.4423 42.9975 19.3551 43.7829 20.0884C44.5848 20.8219 45.5623 21.1886 46.7152 21.1886C48.0018 21.1886 49.0126 20.8382 49.7478 20.1373C50.483 19.4203 50.8505 18.4912 50.8505 17.3504C50.8505 16.2258 50.458 15.3049 49.6726 14.5878C48.904 13.887 47.9182 13.5366 46.7152 13.5366C45.5122 13.5366 44.5263 13.8951 43.7577 14.6122C42.9892 15.3131 42.6049 16.2258 42.6049 17.3504Z" fill="white" />
-							<path d="M66.2147 23.731H56.9414V10.896H59.9991V20.7483H66.2147V23.731Z" fill="white" />
-							<path d="M71.9516 23.731H68.8691V10.896H71.9516V23.731Z" fill="white" />
-						</g>
-						<g filter="url(#filter1_i)">
-							<path d="M78.5993 23.6633H75.542V10.8284H84.3638V13.6398H78.5993V16.2557H83.7378V19.0671H78.5993V23.6633Z" fill="white" />
-						</g>
-						<g filter="url(#filter2_d)">
-							<path fill-rule="evenodd" clip-rule="evenodd" d="M93.8662 2L99.6102 9.13051H88.123L93.8662 2Z" fill="#FFCA28" />
-						</g>
-						<g filter="url(#filter3_i)">
-							<path d="M92.3802 13.6398H87.8438V10.8284H99.9995V13.6398H95.4383V23.6633H92.3802V13.6398Z" fill="white" />
-						</g>
-						<defs>
-							<filter id="filter0_i" x="0" y="6.61768" width="71.9516" height="19.3824" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-								<feFlood flood-opacity="0" result="BackgroundImageFix" />
-								<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-								<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-								<feOffset dy="2" />
-								<feGaussianBlur stdDeviation="2" />
-								<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
-								<feColorMatrix type="matrix" values="0 0 0 0 0.254902 0 0 0 0 0.254902 0 0 0 0 0.254902 0 0 0 0.5 0" />
-								<feBlend mode="normal" in2="shape" result="effect1_innerShadow" />
-							</filter>
-							<filter id="filter1_i" x="75.542" y="10.8284" width="8.82179" height="14.8349" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-								<feFlood flood-opacity="0" result="BackgroundImageFix" />
-								<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-								<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-								<feOffset dy="2" />
-								<feGaussianBlur stdDeviation="2" />
-								<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
-								<feColorMatrix type="matrix" values="0 0 0 0 0.254902 0 0 0 0 0.254902 0 0 0 0 0.254902 0 0 0 0.5 0" />
-								<feBlend mode="normal" in2="shape" result="effect1_innerShadow" />
-							</filter>
-							<filter id="filter2_d" x="84.123" y="0" width="19.4871" height="15.1305" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-								<feFlood flood-opacity="0" result="BackgroundImageFix" />
-								<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-								<feOffset dy="2" />
-								<feGaussianBlur stdDeviation="2" />
-								<feColorMatrix type="matrix" values="0 0 0 0 0.254902 0 0 0 0 0.254902 0 0 0 0 0.254902 0 0 0 0.5 0" />
-								<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
-								<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
-							</filter>
-							<filter id="filter3_i" x="87.8438" y="10.8284" width="12.1558" height="14.8349" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-								<feFlood flood-opacity="0" result="BackgroundImageFix" />
-								<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-								<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-								<feOffset dy="2" />
-								<feGaussianBlur stdDeviation="2" />
-								<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
-								<feColorMatrix type="matrix" values="0 0 0 0 0.254902 0 0 0 0 0.254902 0 0 0 0 0.254902 0 0 0 0.5 0" />
-								<feBlend mode="normal" in2="shape" result="effect1_innerShadow" />
-							</filter>
-						</defs>
-					</svg>
+					<p>При нажатии на кнопку на мобильных не будет фона у кнопки: -webkit-tap-highlight-color: transparent;</p>
 				</div>
 			</div>
 		</div>
