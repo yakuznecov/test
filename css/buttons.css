@@ -227,7 +227,7 @@
 .switch-button-case {
 	display: inline-block;
 	background: none;
-	width: 49%;
+	width: 33%;
 	height: 100%;
 	color: #a5abb7;
 	position: relative;
@@ -250,7 +250,7 @@
 	position: absolute;
 	left: 0;
 	top: 0;
-	width: 50%;
+	width: 33%;
 	height: 100%;
 	z-index: -1;
 	transition: 0.3s ease-out all;
@@ -601,4 +601,8 @@
 	border-radius: 50%;
 	margin-left: 4px;
 	background-color: #f2cbba;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
