@@ -606,3 +606,17 @@
 	align-items: center;
 	justify-content: center;
 }
+
+.deletePopup-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 108px;
+	height: 40px;
+	font-size: 16px;
+	letter-spacing: 0.5px;
+	padding: 0 5px;
+	border-radius: 4px;
+	color: #fff;
+	background: #1991eb;
+}
