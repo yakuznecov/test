@@ -1,41 +1,104 @@
+body {
+	background: rgba(0, 0, 0, 0.5);
+}
+
+#tabs-inner {
+	margin-top: 30px;
+}
+
 .tabs-container {
 	width: 100%;
 	display: flex;
 	align-items: flex-start;
 }
+
 #tabs-nav {
 	margin-right: -2px;
+	margin-top: 19px;
 	position: relative;
-	flex: 17%;
+	flex: 0 0 40px;
 }
-div#tabs-nav a:nth-child(even) {
-	margin: 3px 0;
-}
+
 a.tabs-menu {
-	display: block;
-	background-color: #1179ac;
-	font-size: 12px;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #fff;
-	padding: 5px 10px;
-	font-weight: bold;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 47px;
+	height: 40px;
+	background-color: #fafafa;
 	text-decoration: none;
-	border: solid 2px #1179ac;
 	border-right: 0;
-	border-radius: 3px 0 0 3px;
+	margin-bottom: 33px;
+	border-radius: 6px 6px 0 0;
+	z-index: 2;
+	cursor: pointer;
+	transform: rotate(-90deg);
 }
+
+a.tabs-menu svg {
+	transform: rotate(90deg);
+}
+
+a.tabs-menu:before,
+a.tabs-menu:after {
+	display: block;
+	content: ' ';
+	position: absolute;
+	top: 1px;
+	height: 100%;
+	width: 18px;
+	background-color: #fafafa;
+}
+
+a.tabs-menu:before {
+	right: -8px;
+	-webkit-transform: skew(19deg, 0deg);
+	border-radius: 0 6px 0 0;
+	box-shadow: rgba(0, 0, 0, 0.1) 3px 2px 5px, inset rgba(0, 0, 0, 0.1)-1px 0;
+}
+
+a.tabs-menu:after {
+	left: -8px;
+	-webkit-transform: skew(-19deg, 0deg);
+	border-radius: 6px 0 0 0;
+	box-shadow: rgba(0, 0, 0, 0.1)-3px 2px 5px, inset rgba(0, 0, 0, 0.1) 1px 0;
+}
+
 a.tabs-menu.tabs-menu-active {
 	background-color: #fff;
-	border: solid 2px #1179ac;
-	color: #6b6b6b;
-	border-right: 0;
+	z-index: 3;
 }
+
+a.tabs-menu.tabs-menu-active .tabs-img-1 circle,
+a.tabs-menu.tabs-menu-active .tabs-img-1 path,
+a.tabs-menu.tabs-menu-active .tabs-img-3 path,
+a.tabs-menu.tabs-menu-active .tabs-img-4 path {
+	stroke: #616161;
+}
+
+a.tabs-menu.tabs-menu-active .tabs-img-2 path {
+	fill: #616161;
+}
+
+a.tabs-menu.tabs-menu-active .tabs-img-5 path:first-child,
+a.tabs-menu.tabs-menu-active .tabs-img-5 path:nth-child(5),
+a.tabs-menu.tabs-menu-active .tabs-img-5 path:nth-child(6),
+a.tabs-menu.tabs-menu-active .tabs-img-5 path:nth-child(7) {
+	fill: #616161;
+}
+
+a.tabs-menu.tabs-menu-active:after,
+a.tabs-menu.tabs-menu-active:before {
+	background-color: #fff;
+}
+
 .tabs-content {
-	border: solid 2px #1179ac;
 	background-color: #fff;
 	overflow: hidden;
-	flex: 83%;
+	flex: 0 1 551px;
 	line-height: 1.5;
+	height: 370px;
 }
 .tabs-panel {
 	display: none;
