@@ -39,6 +39,11 @@ p {
 	border-top: 1px solid #000;
 }
 
+.main__header {
+	display: flex;
+	justify-content: space-between;
+}
+
 /* Обнуление для кнопок */
 button {
 	padding: 0;
