@@ -18,11 +18,19 @@
 			<div class="container">
 				<a href="index.html">Главная</a>
 				<div class="jquery">
-					<p>Событие при фокусе на элементе</p>
+					<p>Добавление бордера при фокусе и удаление</p>
 					<pre>
-                        $('.main-header-top-search input').focus(function () {
-                            $('.main-header-top-search').addClass('active');
-                        });
+                        function addBorderFocus(parent, child) {
+                            $(parent)
+                                .focus(function () {
+                                    $(child).addClass('active');
+                                })
+                                .focusout(function () {
+                                    $(child).removeClass('active');
+                                });
+                        }
+                    
+                        addBorderFocus('.main-header-top-search input', '.main-header-top-search');
                     </pre
 					>
 				</div>
