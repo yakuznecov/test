@@ -674,3 +674,37 @@
 .card-large-btn:active {
 	background: #127fd1;
 }
+
+.card-large-btn.--accept {
+	background: #df8282;
+}
+
+.card-large-btn.--accept:hover {
+	background: #d65f5f;
+}
+
+.card-large-btn.--accept:focus {
+	background: #df8282;
+	border: 2px solid #ebb1b1;
+}
+
+.card-large-btn.--accept:active {
+	background: #d65f5f;
+}
+
+.card-large-btn.--return {
+	background: #009a61;
+}
+
+.card-large-btn.--return:hover {
+	background: #008755;
+}
+
+.card-large-btn.--return:focus {
+	background: #009a61;
+	border: 2px solid #8ccab3;
+}
+
+.card-large-btn.--return:active {
+	background: #008755;
+}
