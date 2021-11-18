@@ -71,3 +71,11 @@ $('.googlePlay-box')
 	.mouseout(function () {
 		$('.googlePlayDark').hide();
 	});
+
+// При нажатии на поле, которе не сайдбар и не кнопка, происходит закрытие сайдбара
+document.onclick = function (e) {
+	if (e.target.id !== 'sidebar' && e.target.id !== 'toggle') {
+		toggle.classList.remove('active');
+		sidebar.classList.remove('active');
+	}
+};
