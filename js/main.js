@@ -79,3 +79,33 @@ document.onclick = function (e) {
 		sidebar.classList.remove('active');
 	}
 };
+
+$('.registration-slider-inner').on('afterChange', function (event, slick, currentSlide) {
+	var regBtn = $('.registration-btn');
+	var regBtnMobile = $('.mobile-registration-btn');
+
+	if (currentSlide === 0) {
+		regBtn.attr('href', 'https://kinolift.com/ru/signup/actor');
+		regBtnMobile.attr('href', 'https://kinolift.com/ru/signup/actor');
+	}
+
+	if (currentSlide === 1) {
+		regBtn.attr('href', 'https://kinolift.com/ru/signup/cd');
+		regBtnMobile.attr('href', 'https://kinolift.com/ru/signup/cd');
+	}
+
+	if (currentSlide === 2) {
+		regBtn.attr('href', 'https://kinolift.com/ru/signup/director');
+		regBtnMobile.attr('href', 'https://kinolift.com/ru/signup/director');
+	}
+
+	if (currentSlide === 3) {
+		regBtn.attr('href', 'https://kinolift.com/ru/signup/producer');
+		regBtnMobile.attr('href', 'https://kinolift.com/ru/signup/producer');
+	}
+
+	if (currentSlide === 4) {
+		regBtn.attr('href', 'https://kinolift.com/ru/signup/agent');
+		regBtnMobile.attr('href', 'https://kinolift.com/ru/signup/agent');
+	}
+});
