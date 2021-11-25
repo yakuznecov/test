@@ -64,6 +64,12 @@ $(document).mouseup(function (e) {
 	}
 });
 
+// 3 кнопки, у которых добавляется класс active, у остальных убирается
+$('.sidebar-burger__tabs-item-input').click(function () {
+	$(this).siblings().removeClass('active');
+	$(this).addClass('active');
+});
+
 // Задачи
 
 // что выведет?
