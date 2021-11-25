@@ -70,6 +70,32 @@ $('.sidebar-burger__tabs-item-input').click(function () {
 	$(this).addClass('active');
 });
 
+// Скрытие сайдбара при ресайзе окна и при разрешении ниже 1025px ----------------------------------------------------->
+let isSidebarHidden = false;
+
+window.addEventListener('resize', function () {
+	if (window.innerWidth < 1025) {
+		if (!isSidebarHidden) {
+			hideSidebar();
+		}
+	} else {
+		if (isSidebarHidden) {
+			showSidebar();
+		}
+	}
+});
+
+function hideSidebar() {
+	console.log('Прячем сайдбар');
+	isSidebarHidden = true;
+}
+
+function showSidebar() {
+	console.log('Показываем сайдбар');
+	isSidebarHidden = false;
+}
+// ------------------------------------------------------------------------------------------------------------------------->
+
 // Задачи
 
 // что выведет?
