@@ -80,6 +80,18 @@ document.onclick = function (e) {
 	}
 };
 
+// Start: Скрытие окна Массовое одобрение актеров при уходе мыши за пределы --------------------------------------------->
+$('.dropdown-transfer-actors').mouseleave(function () {
+	$(this).removeClass('active');
+});
+
+// и на чистом JS
+document.querySelector('.dropdown-transfer-actors').addEventListener('mouseleave', (event) => {
+	event.target.classList.remove('active');
+});
+
+// End: Скрытие окна Массовое одобрение актеров ----------------------------------------------->
+
 // Меняется ссылка в зависимости от выбранного слайда
 $('.registration-slider-inner').on('afterChange', function (event, slick, currentSlide) {
 	var regBtn = $('.registration-btn');
