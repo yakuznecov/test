@@ -753,3 +753,32 @@
 	filter: alpha (opacity=100);
 }
 /* ------------------------------------------------------------------------------------ */
+
+.actor__profile-media-nav {
+	position: relative;
+	display: flex;
+	width: 487px;
+	align-items: center;
+	padding: 0 2px;
+	justify-content: space-between;
+	min-height: 31px;
+	background: #eee;
+	border-radius: 4px;
+}
+
+.actor__profile-media-tabs-menu {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 27px;
+	min-width: 240px;
+	font-size: 13px;
+	letter-spacing: 0.4px;
+	color: #616161;
+	border-radius: 2px;
+	background-color: #eee;
+}
+
+.actor__profile-media-tabs-menu.actor__profile-media-active {
+	background-color: #fff;
+}
