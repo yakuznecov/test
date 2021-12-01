@@ -59,3 +59,7 @@ button {
 &:active {
 	background: #0588f8;
 }
+
+dropdown-request-js
+const dropRequestJs = document.querySelector('.dropdown-request-js');
+const dropRequestInner = document.querySelector('.dropdown-request-inner');
