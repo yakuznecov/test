@@ -1,7 +1,8 @@
 code {
 	font-size: 12px;
-	color: green;
+	color: #1991eb;
 	word-wrap: break-word;
+	margin-bottom: 15px;
 }
 
 .global {
@@ -24,21 +25,95 @@ code {
 	color: #70a8dd;
 }
 
-.primary-text {
+.text-blackBrown-large {
+	font-size: 21px;
+	line-height: 31px;
+	letter-spacing: 0.15px;
+	color: #212121;
+}
+
+.text-blackBrown {
 	font-size: 13px;
 	line-height: 16px;
 	letter-spacing: 0.4px;
 	color: #212121;
 }
-.second-text-small {
+
+.text-platinumGrey-medium {
+	font-size: 16px;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	color: #757575;
+}
+
+.text-lightGrey-small {
 	font-size: 12px;
 	line-height: 14px;
 	letter-spacing: 0.4px;
 	color: #9e9e9e;
 }
-.second-text-medium {
+.text-lightGrey-medium {
 	font-size: 13px;
 	line-height: 14px;
 	letter-spacing: 0.4px;
 	color: #9e9e9e;
+}
+
+.text-lightGrey-medium-higher {
+	font-size: 13px;
+	line-height: 16px;
+	letter-spacing: 0.4px;
+	color: #9e9e9e;
+}
+
+.text-blackBluish {
+	font-size: 13px;
+	line-height: 16px;
+	letter-spacing: 0.4px;
+	color: #424242;
+}
+
+/* Кнопки */
+
+.global-buttons {
+	margin-top: 20px;
+}
+
+.blue-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 120px;
+	height: 24px;
+	font-size: 13px;
+	letter-spacing: 0.4px;
+	border-radius: 4px;
+	color: #fff;
+	background: #1991eb;
+	transition: 0.2s ease;
+}
+
+.blue-btn.--medium {
+	height: 32px;
+	font-size: 15px;
+	letter-spacing: 0.5px;
+}
+
+.blue-btn.--large {
+	height: 40px;
+	font-size: 16px;
+	letter-spacing: 0.5px;
+}
+
+.blue-btn:hover {
+	background: #127fd1;
+}
+
+.blue-btn:focus-visible {
+	background: #1991eb;
+	border: 2px solid #7bb9f0;
+}
+
+.blue-btn:active {
+	background: #127fd1;
 }
