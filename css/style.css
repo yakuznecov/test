@@ -238,3 +238,10 @@ button {
 .flex {
 	margin-top: 50px;
 }
+
+.dashed {
+	height: 2px;
+	width: 46px;
+	background: linear-gradient(to right, #000, #000 4px, transparent 4px, transparent);
+	background-size: 8px 100%;
+}
