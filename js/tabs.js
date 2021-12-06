@@ -18,3 +18,26 @@
 		return false;
 	}
 })();
+
+// Start: Tabs Profile Actor Foto Video -------------------------------------------------------->
+const actorProfileBtnLeft = document.querySelector('.actor__profile-media-tabs-menu.left');
+const actorProfileBtnRight = document.querySelector('.actor__profile-media-tabs-menu.right');
+const actorProfileActiveBtn = document.querySelector('.actor__profile-media-active-btn');
+const actorProfileTabsPanelFirst = document.querySelector('#media-tab_1');
+const actorProfileTabsPanelSecond = document.querySelector('#media-tab_2');
+
+actorProfileBtnLeft.addEventListener('click', switchToLeft);
+
+actorProfileBtnRight.addEventListener('click', switchToRight);
+
+function switchToLeft() {
+	actorProfileTabsPanelFirst.classList.add('active');
+	actorProfileTabsPanelSecond.classList.remove('active');
+	actorProfileActiveBtn.style.left = '0%';
+}
+
+function switchToRight() {
+	actorProfileTabsPanelFirst.classList.remove('active');
+	actorProfileTabsPanelSecond.classList.add('active');
+	actorProfileActiveBtn.style.left = '50%';
+}

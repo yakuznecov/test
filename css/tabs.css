@@ -200,3 +200,130 @@ body {
 	display: block;
 }
 /* End: box-tabs */
+
+.actor__profile-media-container {
+	width: 487px;
+	margin-top: 20px;
+}
+
+.actor__profile-media-nav {
+	position: relative;
+	padding: 2px;
+	min-height: 31px;
+	background: rgb(131, 131, 131);
+	border-radius: 4px;
+}
+
+.actor__profile-media-nav-inner {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: 27px;
+	text-align: center;
+	will-change: transform;
+	cursor: pointer;
+}
+
+.actor__profile-media-tabs-menu {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 49%;
+	font-size: 13px;
+	letter-spacing: 0.4px;
+	color: #616161;
+	background: none;
+}
+
+.actor__profile-media-tabs-panel {
+	display: none;
+}
+
+.actor__profile-media-tabs-panel.active {
+	display: block;
+}
+
+.actor__profile-media-foto {
+	display: flex;
+	width: 100%;
+	overflow-x: auto;
+	scrollbar-color: #e0e0e0 transparent;
+	scrollbar-width: thin;
+	padding-bottom: 8px;
+	margin-top: 24px;
+}
+
+.actor__profile-media-video {
+	display: flex;
+	width: 100%;
+	overflow-x: auto;
+	scrollbar-color: #e0e0e0 transparent;
+	scrollbar-width: thin;
+	padding-bottom: 8px;
+	margin-top: 24px;
+}
+
+.actor__profile-media-foto {
+	background: transparent;
+}
+
+.actor__profile-media-video::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.actor__profile-media-foto::-webkit-scrollbar {
+	height: 4px;
+	width: 254px;
+}
+.actor__profile-media-video::-webkit-scrollbar {
+	height: 4px;
+	width: 254px;
+}
+
+.actor__profile-media-foto::-webkit-scrollbar-thumb {
+	background: #e0e0e0;
+	border-radius: 100px;
+	background-clip: padding-box;
+}
+.actor__profile-media-video::-webkit-scrollbar-thumb {
+	background: #e0e0e0;
+	border-radius: 100px;
+	background-clip: padding-box;
+}
+
+.actor__profile-media-foto-box {
+	width: 160px;
+	height: 230px;
+	margin-right: 4px;
+}
+.actor__profile-media-video-box {
+	width: 160px;
+	height: 230px;
+	margin-right: 4px;
+}
+
+.actor__profile-media-foto-box:last-child {
+	margin-right: 0;
+}
+
+.actor__profile-media-video-box:last-child {
+	margin-right: 0;
+}
+
+.actor__profile-media-video-box {
+	width: 306px;
+}
+
+.actor__profile-media-active-btn {
+	color: #61707d;
+	background-color: #fff;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 50%;
+	height: 100%;
+	z-index: -1;
+	transition: all 0.2s ease-out;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+	border-radius: 2px;
+}
