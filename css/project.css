@@ -34,7 +34,7 @@ button {
 }
 
 .border {
-	border: 1px solid #BDBDBD; /* при hover на инпут */
+	border: 1px solid #bdbdbd; /* при hover на инпут */
 	border-top: 1px solid #e3e3e3; /* Разделитель в дропдаунах */
 	border: 1px solid transparent;
 }
@@ -59,7 +59,3 @@ button {
 &:active {
 	background: #0588f8;
 }
-
-dropdown-request-js
-const dropRequestJs = document.querySelector('.dropdown-request-js');
-const dropRequestInner = document.querySelector('.dropdown-request-inner');
