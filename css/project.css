@@ -59,3 +59,10 @@ button {
 &:active {
 	background: #0588f8;
 }
+
+.main-header-top-search {
+	@media (max-width: 1280px) {
+		flex: 0 0 112px;
+		transition: flex 0.2s;
+	}
+}
