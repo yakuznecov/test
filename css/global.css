@@ -47,6 +47,13 @@ code {
 	color: #212121;
 }
 
+.text-platinumGrey-regular {
+	font-size: 14px;
+	line-height: 17px;
+	letter-spacing: 0.5px;
+	color: #757575;
+}
+
 .text-platinumGrey-medium {
 	font-size: 16px;
 	line-height: 20px;
@@ -99,6 +106,13 @@ code {
 	font-size: 14px;
 	line-height: 16px;
 	letter-spacing: 0.25px;
+	color: #424242;
+}
+
+.text-blackBluis-large {
+	font-size: 21px;
+	line-height: 31px;
+	letter-spacing: 0.15px;
 	color: #424242;
 }
 
@@ -193,4 +207,28 @@ code {
 	background: #f4f6f6;
 	border: 1px solid #0064c1;
 	color: #0064c1;
+}
+
+/* secondary-btn */
+.secondary-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 40px;
+	font-size: 16px;
+	letter-spacing: 0.5px;
+	padding: 0 5px;
+	border: 1px solid #e0e0e0;
+	border-radius: 4px;
+	color: #757575;
+	transition: 0.2s ease;
+}
+.secondary-btn:focus-visible {
+	border: 2px solid #7bb9f0;
+}
+.secondary-btn:hover,
+.secondary-btn:active {
+	background: #fafafa;
+	border: 1px solid #757575;
+	color: #424242;
 }
