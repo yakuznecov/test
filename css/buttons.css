@@ -782,3 +782,22 @@
 .actor__profile-media-tabs-menu.actor__profile-media-active {
 	background-color: #fff;
 }
+
+/* Loader */
+.myLoader {
+	margin-top: 10px;
+	width: 20px;
+	height: 20px;
+	background-image: url(../img/border-preloader.png);
+	background-repeat: no-repeat;
+	animation: 1s myAnim linear infinite;
+}
+
+@keyframes myAnim {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
