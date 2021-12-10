@@ -300,3 +300,47 @@ code {
 	padding: 11px;
 	border: 2px solid rgba(223, 130, 130, 0.7);
 }
+
+/* Accordeon */
+
+.accordeon-wrapper {
+	min-width: 256px;
+}
+
+.accordeon-item {
+	position: relative;
+	width: 100%;
+	min-height: 40px;
+	border: 1px solid #e0e0e0;
+	border-radius: 4px;
+	margin-bottom: 8px;
+}
+
+.accordeon-item-inner {
+	display: flex;
+}
+
+.accordeon-item-title {
+	font-size: 14px;
+	padding: 10px;
+	letter-spacing: 0.25px;
+	color: #424242;
+	cursor: pointer;
+}
+
+.accordeon-item-content {
+	position: relative;
+	height: 0;
+	overflow: hidden;
+	transition: 0.5s ease-in-out;
+}
+
+.block {
+	height: 50px;
+	width: 50px;
+	border: 1px solid #e0e0e0;
+}
+
+.accordeon-item-title.active ~ .accordeon-item-content {
+	height: 200px;
+}

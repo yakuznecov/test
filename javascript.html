@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>javascript</title>
+
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/null.css" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="container">
+				<a href="index.html">Главная</a> <br />
+				<section class="javascript" id="javascript">
+					<h2>Javascript</h2>
+					<p>Изменение фона и цвета ссылки при нажатии</p>
+					<code> $('.btn-more-empty').on('click', function () { $(this).css('background-color', '#3f6a6d'); $(this).css('color', '#fff'); $(this).css('border-color', '#3f6a6d'); }); </code>
+					<p>При нажатии на поле, которе не сайдбар и не кнопка, происходит закрытие сайдбара</p>
+					<pre>
+document.onclick = function (e) {
+    if (e.target.id !== 'sidebar' && e.target.id !== 'toggle') {
+    toggle.classList.remove('active');
+    sidebar.classList.remove('active');
+    }
+ };</pre
+					>
+				</section>
+			</div>
+		</div>
+		<script src="js/main.js"></script>
+		<script src="js/functions.js"></script>
+		<script src="js/test.js"></script>
+	</body>
+</html>
