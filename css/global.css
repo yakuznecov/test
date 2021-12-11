@@ -303,44 +303,35 @@ code {
 
 /* Accordeon */
 
-.accordeon-wrapper {
-	min-width: 256px;
+.spoiler {
+	max-width: 256px;
 }
 
-.accordeon-item {
-	position: relative;
-	width: 100%;
-	min-height: 40px;
+.spoiler-item {
 	border: 1px solid #e0e0e0;
 	border-radius: 4px;
+	background-color: #fafafa;
 	margin-bottom: 8px;
 }
 
-.accordeon-item-inner {
+.spoiler-item-header {
+	position: relative;
 	display: flex;
-}
-
-.accordeon-item-title {
+	align-items: center;
 	font-size: 14px;
-	padding: 10px;
 	letter-spacing: 0.25px;
 	color: #424242;
+	min-height: 40px;
+	padding: 10px 12px;
 	cursor: pointer;
 }
 
-.accordeon-item-content {
-	position: relative;
-	height: 0;
+.spoiler-item-body {
+	max-height: 0;
 	overflow: hidden;
-	transition: 0.5s ease-in-out;
+	transition: max-height 0.2s ease-out;
 }
 
-.block {
-	height: 50px;
-	width: 50px;
-	border: 1px solid #e0e0e0;
-}
-
-.accordeon-item-title.active ~ .accordeon-item-content {
-	height: 200px;
+.spoiler-item-body-content {
+	padding: 10px 12px 12px;
 }

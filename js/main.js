@@ -25,14 +25,6 @@
 // 	activeSwitch.style.left = '33.33333%';
 // });
 
-const accordeons = document.querySelectorAll('.accordeon-item-title');
-
-for (item of accordeons) {
-	item.addEventListener('click', function () {
-		this.classList.toggle('active');
-	});
-}
-
 // $(function () {
 // 	// 4 кнопки с одной активной при переключении
 // 	$('.menu-header__info-item').click(function () {
