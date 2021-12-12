@@ -314,6 +314,10 @@ code {
 	margin-bottom: 8px;
 }
 
+.spoiler-item.active {
+	border: 1px solid #9dc6ee;
+}
+
 .spoiler-item-header {
 	position: relative;
 	display: flex;
@@ -326,10 +330,23 @@ code {
 	cursor: pointer;
 }
 
+.spoiler-item-header svg {
+	transition: all 0.3s;
+}
+
+.spoiler-item-header.active svg {
+	transition: all 0.3s;
+	transform: rotate(180deg);
+}
+
+.spoiler-item-header span {
+	margin-right: auto;
+}
+
 .spoiler-item-body {
 	max-height: 0;
 	overflow: hidden;
-	transition: max-height 0.2s ease-out;
+	transition: max-height 0.3s ease-out;
 }
 
 .spoiler-item-body-content {
