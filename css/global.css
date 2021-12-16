@@ -364,8 +364,9 @@ code {
 }
 
 .checkbox-main {
-	height: 1px;
-	width: 1px;
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
 }
 
 .label-main {
