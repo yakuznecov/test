@@ -14,3 +14,9 @@ spoilerItemHeaders.forEach((spoilerItemHeader) => {
 		}
 	});
 });
+
+$(function () {
+	$('.spoiler-box-header').click(function () {
+		$(this).next('.spoiler-box-body').slideToggle();
+	});
+});

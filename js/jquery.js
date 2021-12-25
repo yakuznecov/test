@@ -82,4 +82,20 @@ $(function () {
 		});
 		console.log('Результат: ' + isResult);
 	});
+
+	// Открываем по клику дропдауны с календарем и закрываем по клику в любом месте
+	function addActiveOnClick(name) {
+		$(name).click(function (e) {
+			$(this).toggleClass('--active');
+		});
+
+		$(document).click(function (e) {
+			let field = $(name);
+			if (!field.is(e.target) && field.has(e.target).length === 0) {
+				field.removeClass('--active');
+			}
+		});
+	}
+
+	addActiveOnClick('.dropdown-date');
 })(jQuery);
