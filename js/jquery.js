@@ -98,4 +98,7 @@ $(function () {
 	}
 
 	addActiveOnClick('.dropdown-date');
+
+	// Анимация rotate элемента
+	$('.dropdown-flag-btn-icon').css({ transition: 'transform 0.2s', transform: 'rotate("180"deg)' });
 })(jQuery);

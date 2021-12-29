@@ -122,6 +122,13 @@ code {
 	color: #424242;
 }
 
+.text-blackBluish-small-high {
+	font-size: 12px;
+	line-height: 17px;
+	letter-spacing: 0.4px;
+	color: #424242;
+}
+
 .text-blackBluis-regular {
 	font-size: 14px;
 	line-height: 16px;
