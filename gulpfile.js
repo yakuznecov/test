@@ -15,14 +15,13 @@ let paths = {
 	src: {
 		html: 'src/*.html',
 		scss: 'src/scss/**/*.scss',
-		images: 'src/images/**/*.*',
-		js: 'src/js/**/*.js',
+		images: 'src/images/**/*.*'
+		
 	},
 	build: {
 		html: 'dist',
 		css: 'dist/css',
-		images: 'dist/images',
-		js: 'dist/js',
+		images: 'dist/images'
 	},
 };
 
