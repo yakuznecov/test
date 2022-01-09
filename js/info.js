@@ -162,6 +162,7 @@ const getNumberExplanation = (number) => {
 		default:
 			return null;
 	}
+	
 };
 
 getNumberExplanation(8); // null
@@ -170,3 +171,6 @@ getNumberExplanation(8); // null
 getNumberExplanation(666); // 'devil number'
 getNumberExplanation(42); // 'answer for everything'
 getNumberExplanation(7); // 'prime number'
+
+// Получить текущую ссылку на странице и редирект на другую страницу
+window.location.href = 'newPage.html';
