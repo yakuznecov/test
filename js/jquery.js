@@ -109,7 +109,7 @@ $(function () {
 		});
 
 		$(document).click(function (e) {
-			let field = $(name);
+			let field = $(name); // контейнер, который нужно закрыть
 			if (!field.is(e.target) && field.has(e.target).length === 0) {
 				field.removeClass('--active');
 			}
@@ -128,9 +128,27 @@ $(function () {
 	});
 	// End: Событие при resize окна браузера
 
+	// Start: Смена плейсхолдера у инпута при загрузке страницы и смене размера экрана
+	function changeInputPlaceholder() {
+		let inputTopSearch = $('.input-top-search-js');
+
+		$(window).on('load resize', function () {
+			if ($(window).width() < 1281) {
+				inputTopSearch.attr('placeholder', 'Актёры');
+			} else {
+				inputTopSearch.attr('placeholder', 'Актёры в этом кастинге');
+			}
+		});
+	}
+
+	changeInputPlaceholder();
+	// End: Смена плейсхолдера у инпута при загрузке страницы и смене размера экрана
+
 	// Start: Метрики
 	$(document).width(); // возвращает ширину HTML документа
 	$(window).width(); // возвращает ширину области просмотра браузера
+	element.offset().left; // Растояние от левого края документа
+	element.width(); // Ширина элемента
 	// End: Метрики
 
 	// Start: Range input slider in transfer-actors
@@ -200,4 +218,11 @@ $(function () {
 			});
 	});
 	// End: Range input slider in transfer-actors
+
+	// Trigger focus input, если нужно при нажатии на все поле
+	$(function () {
+		$('.input-box').click(function () {
+			$(this).find('input').focus();
+		});
+	});
 })(jQuery);

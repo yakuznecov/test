@@ -162,7 +162,6 @@ const getNumberExplanation = (number) => {
 		default:
 			return null;
 	}
-	
 };
 
 getNumberExplanation(8); // null
@@ -174,3 +173,10 @@ getNumberExplanation(7); // 'prime number'
 
 // Получить текущую ссылку на странице и редирект на другую страницу
 window.location.href = 'newPage.html';
+
+// Резиновый инпут (input)
+// <input autofocus style=width:0>
+document.querySelector('input').addEventListener('input', function () {
+	this.style.width = 0;
+	this.style.width = this.scrollWidth + 'px';
+});

@@ -439,7 +439,7 @@ code {
 	display: flex;
 	align-items: center;
 	width: 100%;
-	padding: 9px 12px;
+	padding: 0 12px;
 	border: 1px solid #e0e0e0;
 	border-radius: 4px;
 	background: #fafafa;
@@ -449,8 +449,15 @@ code {
 	width: 100%;
 	background: transparent;
 	font-size: 14px;
+	line-height: 38px;
 	letter-spacing: 0.25px;
 	color: #424242;
+}
+
+.input-box input::placeholder {
+	font-size: 14px;
+	letter-spacing: 0.25px;
+	color: #9e9e9e;
 }
 
 .input-box:hover {
@@ -458,8 +465,12 @@ code {
 }
 
 .input-box:focus-within {
-	padding: 8px 11px;
+	padding: 0 11px;
 	border: 2px solid rgba(112, 168, 221, 0.7);
+}
+
+.input-box:focus-within input {
+	line-height: 36px;
 }
 
 .input-box.--error {
@@ -530,18 +541,35 @@ code {
 	fill: #127fd1;
 }
 
-.empty-btn {
+.btn-underline {
 	font-weight: 700;
-	line-height: 16px;
+	line-height: 14px;
 	border-bottom: 1px solid #1991eb;
 	color: #1991eb;
+	font-size: 14px;
+	letter-spacing: 0.25px;
+}
+
+.btn-underline:hover,
+.btn-underline:active {
+	color: #106db3;
+}
+
+.btn-underline.--large {
 	font-size: 16px;
+	line-height: 16px;
 	letter-spacing: 0.5px;
 }
 
-.empty-btn:hover,
-.empty-btn:active {
-	color: #106db3;
+.btn-underline.--disabled {
+	color: #acd4fa;
+	border-bottom: 1px solid #acd4fa;
+	cursor: auto;
+}
+
+.btn-underline.--disabled:hover {
+	color: #acd4fa;
+	border-bottom: 1px solid #acd4fa;
 }
 
 /* Кнопки переключения */
@@ -592,3 +620,6 @@ code {
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
 	border-radius: 2px;
 }
+
+
+dropdown-text-js
