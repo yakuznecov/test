@@ -225,4 +225,22 @@ $(function () {
 			$(this).find('input').focus();
 		});
 	});
+
+	// Start: Trigger focus textarea and custom scroll
+	$(function () {
+		const field = $('.area-field-wrapper');
+
+		field.click(function () {
+			$(this).find('textarea').focus();
+			$(this).addClass('active');
+		});
+
+		$(document).click(function (e) {
+			if (!field.is(e.target) && field.has(e.target).length === 0) {
+				field.removeClass('active');
+			}
+		});
+	});
+
+	// End: Trigger focus textarea and custom scroll
 })(jQuery);
