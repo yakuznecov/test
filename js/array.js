@@ -2,7 +2,28 @@
 
 // Массивы
 
-// Задача про чаевые
+const myArray = [1, 2, 3];
+myArray.push(4); // добавление элемента в конец массива
+myArray.pop(); // удаление элемента в конце массива. Он также возвращает удаленный элемент
+myArray.unshift(true); // добавляет элемент в начало массива
+myArray.shift(); // удаляет первый элемент в массиве
+myArray.forEach((el) => console.log(el * 2)); // перебор всех элементов массива и вызов функции для каждого из них (3 раза) Оригинальный массив не меняется при этом.
+
+const newArray = myArray.map((el) => el * 3); // неявно возвращает после перебора значение каждого элемента, исходя из результатов колбэк функции
+
+const newArray = myArray.map((el) => {
+	return el * 3;
+}); // явно возвращает результат функции
+
+const newArray = myArray.map(function (el) {
+	return el * 3;
+}); // явно возвращает результат функции, результат будет тем же, что и выше, только иная запись функции
+
+console.log(newArray); // [3, 6, 9]
+
+const removedElement = myArray.pop(); // в переменную помещается последний удаленный элемент массива
+
+// Задача про чаевыем -------------------------------------------------------------------------------
 
 const calcTip = function (bill) {
 	return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
@@ -41,7 +62,9 @@ const restaurant = {
 	},
 
 	orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
-		console.log(`Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`);
+		console.log(
+			`Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+		);
 	},
 
 	orderPasta(ing1, ing2, ing3) {
