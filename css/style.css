@@ -255,3 +255,7 @@ button {
 	background: linear-gradient(to right, #000, #000 4px, transparent 4px, transparent);
 	background-size: 8px 100%;
 }
+
+#demoLinks a {
+	display: block;
+}

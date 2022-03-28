@@ -41,3 +41,7 @@ const checkWinner = function (avgDolphins, avgKoalas) {
 
 checkWinner(scoreDolphins, scoreKoalas);
 checkWinner(576, 111); // тогда дельфины выиграют
+
+
+// Js Stage 2
+
