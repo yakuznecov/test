@@ -1,5 +1,3 @@
-'use strict';
-
 // Массивы
 
 const myArray = [1, 2, 3];
