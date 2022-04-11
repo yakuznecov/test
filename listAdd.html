@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>ListAdd</title>
+		<link rel="stylesheet" href="css/null.css" />
+		<link rel="stylesheet" href="css/style.css" />
+
+		<style>
+			.selectedItem {
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Добавление элементов</h1>
+		<ul id="list">
+			<li>Живопись</li>
+			<li>Музыка</li>
+			<li>Скульптура</li>
+		</ul>
+
+		<div id="demoLinks">
+			<a href="javascript:addToList()">Добавить...</a>
+			<a href="javascript:deleteLastElement()">Удалить последний элемент</a>
+			<a href="javascript:removeFromList()">Удалить последний элемент - второй вариант</a>
+		</div>
+
+		<script src="js/listAdd.js"></script>
+	</body>
+</html>
