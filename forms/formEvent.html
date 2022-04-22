@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>События формы</title>
+	<style>
+		form {
+			width: 300px;
+			margin: 0 auto;
+		}
+
+		form fieldset {
+			background-color: #f2f2f2;
+		}
+
+		form h2 {
+			text-align: center;
+		}
+
+		form label {
+			display: inline-block;
+			width: 75px;
+		}
+
+		form div {
+			margin: 5px;
+		}
+
+		input[type=text]:invalid, input[type=password]:invalid {
+			outline: 1px solid red;
+		}
+	</style>
+
+	<script type="text/javascript">
+		addEventListener('load', () => {
+			document.querySelectorAll('#confirm, #password')
+				.forEach(e => {
+					e.addEventListener('input', function (e) {
+						// событие "е" позволит отменить отправку данных на сервер
+
+						let pass = document.getElementById('password');
+						let conf = document.getElementById('confirm');
+
+						conf.setCustomValidity(pass.value != conf.value ? 'Пароль и подтверждение не совпадают!' : '');
+
+						// if (pass.value != conf.value) {
+						// alert('Пароль и подтверждение не совпадают!');
+						// conf.setCustomValidity('Пароль и подтверждение не совпадают!'); // выдает предупреждение, если поля некорректны
+						// e.preventDefault();
+						// отменяем отправку формы, даже если данные не верны
+						// return false;
+						// и дополнительно можно вернуть false, чтобы данные также не отправлялись, но вариант необязателен
+						// } else {
+						// conf.setCustomValidity('');
+						// }
+
+					})
+				})
+
+			document.querySelector('#login').addEventListener('keydown', e => {
+				// let ch = String.fromCharCode(e.keyCode);
+
+				// чтобы цифры не вводились
+				if (e.key >= '0' && e.key <= '9') {
+					e.preventDefault();
+				}
+			})
+
+		});
+	</script>
+</head>
+
+<body>
+	<form action="">
+		<h2>registration</h2>
+		<fieldset>
+			<div><label for="">Name: </label><input type="text" id="login" required pattern=".{3,}" title="Login >= 3 chars"></div> <!-- проверка по регулярному выражению, больше 3-х символов. Есть также title, как подсказка -->
+			<div><label for="">Password: </label><input type="password" id="password" required pattern=".{3,}" title="password >= 3 chars"></div>
+			<div><label for="">Confirm: </label><input type="password" id="confirm" required pattern=".{3,}" title="password >= 3 chars"></div>
+			<div><label for="">Age: </label><input type="number" id="age"></div>
+			<input type="submit" value="Register">
+		</fieldset>
+	</form>
+</body>
+
+</html>

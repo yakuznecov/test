@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Список</title>
+
+	<style>
+		.selectedItem {
+			color: red;
+		}
+	</style>
+
+	<script type="text/javascript">
+		function addToList() {
+			let itemTextElement = document.querySelector('#newItemText');
+
+			if (!itemTextElement) {
+				let li = document.createElement('li');
+				li.innerHTML = `
+					<input type='text' id='newItemText'>&nbsp;<button disabled>OK</button>&nbsp;<button>Отмена</button>
+				`;
+
+				let ul = document.querySelector('ul#list');
+				let before = ul.querySelector('li.selectedItem');
+	
+				if (before) {
+					ul.insertBefore(li, before);
+				} else {
+					ul.appendChild(li);
+				}
+
+				let itemTextElement = document.querySelector('#newItemText');
+	
+				let ok = document.querySelector('ul#list li button:first-of-type');
+				let cancel = document.querySelector('ul#list li button:last-of-type');
+	
+				cancel.addEventListener('click', () => {
+					ul.removeChild(li);
+				});
+
+				ok.addEventListener('click', () => {
+					if (itemTextElement.value.length > 0) {
+						li.innerHTML = itemTextElement.value;
+						li.addEventListener('click', clickOnItem);
+					}
+				})
+
+				itemTextElement.addEventListener('keydown', e => {
+					if (e.key >= '0' && e.key <= '9') {
+						e.preventDefault();
+					}
+				});
+
+				itemTextElement.addEventListener('input', e => {
+					ok.disabled = itemTextElement.value.length == 0;
+				});
+
+				itemTextElement.focus();
+	
+			} else {
+				itemTextElement.focus();
+			}
+		}
+
+		function clickOnItem() {
+			let s = this.parentNode.querySelector('li.selectedItem'); // берем тот элемент, на который кликнули. Берем у него родителя. Ищем элемент, выделенный ранее с таким классом
+			if (s) {
+				s.classList.remove('selectedItem'); // если такой есть, то у него убираем выделенный класс
+			}
+
+			if (s != this) {
+				this.classList.add('selectedItem'); // если элемент не совпадает с выделенным ранее, то добавляем класс.
+			}
+		}
+
+		// удаление последнего элемента в массиве li
+		function deleteLastElement() {
+			let lastLi = document.querySelectorAll('body li');
+
+			if (lastLi.length > 0) {
+				lastLi[lastLi.length - 1].parentNode.removeChild(lastLi[lastLi.length - 1]);
+			}
+		}
+
+		function removeFromList() {
+			// let li = document.querySelector('ul#list > li:last-of-type'); // находит последний элемент li
+			let li = document.querySelector('ul#list > li.selectedItem');
+			if (li && confirm(`Удалить пункт: '${li.textContent}'?`)) {
+				li.parentNode.removeChild(li);
+			}
+		}
+
+		// при загрузке страницы
+		document.onreadystatechange = () => {
+			// пример из документации
+			if (document.readyState === 'interactive') {
+				document.querySelectorAll('ul#list > li').forEach((li) => {
+					li.addEventListener('click', clickOnItem);
+				});
+			}
+		};
+	</script>
+</head>
+
+<body>
+	<h1>Добавление элементов</h1>
+	<ul id="list">
+		<li>Живопись</li>
+		<li>Музыка</li>
+		<li>Скульптура</li>
+	</ul>
+
+	<div id="demoLinks">
+		<a href="javascript:addToList()">Добавить...</a>
+		<a href="javascript:deleteLastElement()">Удалить последний элемент</a>
+		<a href="javascript:removeFromList()">Удалить последний элемент - второй вариант</a>
+	</div>
+</body>
+
+</html>

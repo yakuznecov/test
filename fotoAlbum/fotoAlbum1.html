@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Фотоальбом-1</title>
+	<style>
+		div#photoContainer img {
+			margin: 20px;
+		}
+
+		#buttons {
+			text-align: center;
+		}
+
+		#photo {
+			margin: 0 auto;
+			width: 1280px;
+			height: 720px;
+			background-position: center center;
+			background-repeat: no-repeat;
+			transition: background-image 0.5s;
+		}
+	</style>
+	<script type="text/javascript" src="fotoAlbum.js"></script>
+	<script type="text/javascript">
+		let photoIndex = 0; // начальное положение индекса фото
+		let slideShowTimer;
+
+		function imagePath(name) {
+			return `url('./images/${name}')`;
+		}
+
+		function updatePhoto() {
+			let photo = document.getElementById('photo');
+			photo.style.backgroundImage = imagePath(photos[photoIndex]);
+		}
+
+		function goPhoto(i) {
+			photoIndex += i;
+
+			if (photoIndex >= photos.length) {
+				photoIndex = 0;
+			}
+
+			if (photoIndex < 0) {
+				photoIndex = photos.length - 1;
+			}
+			updatePhoto();
+		}
+
+		function prevPhoto() {
+			goPhoto(-1);
+		}
+
+		function nextPhoto() {
+			goPhoto(1);
+		}
+
+		function slideShow() {
+			if (slideShowTimer) {
+				clearInterval(slideShowTimer);
+				slideShowTimer = null;
+			} else {
+				slideShowTimer = setInterval(nextPhoto, 3000);
+			}
+		}
+
+		addEventListener('load', () => {
+			updatePhoto();
+			let c = document.getElementById('photoContainer');
+			let i = 0;
+			photos.forEach(p => {
+				let img = new Image();
+				img.src = `./images/${p}`;
+				img.width = 128;
+				img.height = 72;
+				img.id = `miniPhoto-` + (i++);
+				c.appendChild(img);
+				img.addEventListener('click', function () {
+					photoIndex = parseInt(this.id.split('-')[1]);
+					updatePhoto();
+				});
+			});
+
+			document.getElementById('nextPhoto').addEventListener('click', nextPhoto);
+			document.getElementById('prevPhoto').addEventListener('click', prevPhoto);
+			document.getElementById('slideShow').addEventListener('click', slideShow);
+
+			document.getElementById('photo').addEventListener('click', function (e) {
+				if (e.offsetX < this.offsetWidth / 2) {
+					prevPhoto();
+				} else {
+					nextPhoto();
+				}
+			});
+
+			document.body.addEventListener('keyup', e => {
+				if (e.keyCode == 37) {
+					prevPhoto();
+				}
+				if (e.keyCode == 39) {
+					nextPhoto();
+				}
+			})
+		});
+
+	</script>
+</head>
+
+<body>
+	<div id="photoContainer"></div>
+	<div id="photo"></div>
+	<div id="buttons">
+		<button id="prevPhoto">Назад</button>
+		<button id="slideShow">SlideShow</button>
+		<button id="nextPhoto">Вперёд</button>
+	</div>
+</body>
+
+
+
+</html>

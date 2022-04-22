@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Fetch</title>
+
+	<style>
+
+	</style>
+
+	<script type="text/javascript">
+		//server URL
+		const personApiUrl = "https://randomuser.me/api/?results=3";
+
+		//Create new element by element name
+		function createNode(element) {
+			return document.createElement(element);
+		}
+
+		// Append the element(el) into the parent
+		function append(parent, el) {
+			return parent.appendChild(el);
+		}
+
+		async function getPersons() {
+			try {
+				//Get request by fetch
+				let response = await fetch(personApiUrl); // возвращает промис объект
+				if (response.ok) {
+					//Converting the response to Json
+					const data = await response.json();
+					console.log(data);
+					//Get table element
+					const table = document.getElementById("personTable");
+					//Mapping all persons into the table
+					data.results.map(function (auther) {
+						//Create new element to insert into the table
+						const tr = createNode('tr'),
+							fullNameRow = createNode('td'),
+							PicRow = createNode('td'),
+							PicEl = createNode('img'),
+							phone = createNode('td'),
+							emailRow = createNode('td'),
+							country = createNode('td'),
+							age = createNode('td');
+						//Insert the data into the element
+						fullNameRow.innerHTML = `${auther.name.title}. ${auther.name.last} ${auther.name.first}`;
+						PicEl.src = auther.picture.large;
+						emailRow.innerHTML = auther.email;
+						phone.innerHTML = auther.phone;
+						age.innerHTML = auther.registered.age;
+						country.innerHTML = auther.location.country;
+						//Insert the elements into the table
+						append(tr, fullNameRow);
+						append(tr, PicRow);
+						append(PicRow, PicEl);
+						append(tr, emailRow);
+						append(tr, phone);
+						append(tr, age);
+						append(tr, country);
+						append(table, tr);
+					})
+				}
+			}
+			catch (e) {
+				console.log(e);
+			}
+		}
+
+		document.addEventListener('DOMContentLoaded', function (event) {
+			document.getElementById('addPersonsBtn').addEventListener('click', getPersons);
+		});
+
+	</script>
+</head>
+
+<body>
+	<button id="addPersonsBtn">Get Persons</button>
+	<hr />
+	<table id="personTable">
+		<tr>
+			<th>Full name</th>
+			<th>Picture</th>
+			<th>Email</th>
+			<th>Phone</th>
+			<th>Age</th>
+			<th>Country</th>
+		</tr>
+	</table>
+
+</body>
+
+</html>
