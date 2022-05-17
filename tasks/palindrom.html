@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Палиндром</title>
+	<style>
+
+	</style>
+
+	<script type="text/javascript">
+		// function palindrom(str) {
+		// 	str = str.toLowerCase();
+		// 	return str == str.split('').reverse().join('');
+		// }
+
+		const palindrom = str => {
+			str = str.toLowerCase();
+			return str === str.split('').reverse().join('');
+		}
+
+		// решение подходит, кроме введенных символов эмодзи
+
+		console.log(palindrom('Abba'));
+
+		const palindrom2 = str => {
+			str = str.toLowerCase().replace(/\s/g, ''); // убираем пустые строки
+			return str === str.split('').reverse().join('');
+		}
+
+		console.log(palindrom2('А роза упала на лапу Азора'));
+	</script>
+</head>
+
+<body>
+	<h2>Палиндром</h2>
+	<p>Написать функцию, которая проверяет, является ли строка палиндромом или нет. Вернуть true или false</p>
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Количество гласных в строке </title>
+	<style>
+
+	</style>
+
+	<script type="text/javascript">
+		function findVowels(str) {
+			let count = 0;
+			const vowels = ['a', 'e', 'i', 'o', 'u'];
+
+			for (let char of str.toLowerCase()) {
+				if (vowels.includes(char)) {
+					count += 1;
+				}
+			}
+
+			return count;
+		}
+
+		console.log(findVowels('hello')); // 2
+		console.log(findVowels('why')); // 0
+
+		// 2-й вариант
+		function findVowels2(str) {
+			const matched = str.match(/[aeiou]/gi); // все элементы, которые хотели бы найти и глобальный поиск, независимый от регистра
+			return matched ? matched.length : 0;
+		}
+
+		console.log(findVowels2('avatar'));
+
+		// 3-й вариант
+		function findVowels3(str) {
+			const vowels = ['a', 'e', 'i', 'o', 'u'];
+			return str.split('').filter(ltr => vowels.includes(ltr)).length;
+		}
+
+		console.log(findVowels3('terminator'));
+
+		// 4-й вариант
+		const findVowels4 = str => {
+			const vowelsArr = ['a', 'e', 'i', 'o', 'u'];
+			let counter = 0;
+			const myStrArr = str.toLowerCase().split('');
+
+			vowelsArr.forEach(letter => {
+				myStrArr.forEach(myLetter => {
+					if (myLetter === letter) counter++;
+				});
+			});
+
+			return counter;
+		};
+
+		console.log(findVowels4('santa barbara'));
+
+		// 5-й вариант
+		function findVowels5(str = '') {
+			let count = 0;
+
+			for (let ch of str.toLocaleLowerCase()) {
+				if ('aeiou'.includes(ch)) {
+					count += 1;
+				}
+			}
+
+			return count;
+		}
+
+		console.log(findVowels5('adrenalin'));
+
+		// 6-й вариант
+		function findVowels6(str) {
+			let count = 0;
+			let regexp = /[aeiou]/gi;
+
+			while (regexp.exec(str)) {
+				count++;
+			}
+
+			return count;
+		}
+
+		console.log(findVowels6('soer'));
+
+		// 7-й вариант
+		const findVowels7 = (str) => {
+			const letters = [...str.toLowerCase()];
+			const vowels = ['a', 'e', 'i', 'o', 'u'];
+			let count = 0;
+
+			vowels.forEach((letter) => {
+				if (letters.includes(letter)) {
+					count += 1;
+				}
+			});
+
+			return count;
+		};
+
+		console.log(findVowels7('transformers'));
+
+		// 8-й вариант
+		const findVowels8 = (str) => {
+			var arr = [];
+			const vowels = ['a', 'e', 'i', 'o', 'u'];
+
+			str.split("").filter(function (item) {
+				if (vowels.includes(item)) {
+					str[item] = true;
+					arr.push(item);
+				}
+			})
+			return arr.length;
+		};
+
+		console.log(findVowels8('ship'));
+
+		// 9-й вариант
+		const findWovels9 = (str) => {
+			const strTo = str.toLowerCase().split('');
+			const arrVowels = ['a', 'e', 'i', 'o', 'u'];
+
+			return strTo.reduce((acc, nextValue) => {
+				arrVowels.forEach(vow => {
+					if (nextValue === vow) {
+						acc++;
+					}
+				})
+
+				return acc;
+			}, 0)
+		}
+
+		console.log(findWovels9('sochi'));
+	</script>
+</head>
+
+<body>
+	<h2>find-vowels</h2>
+	<p>Необходимо написать функцию, которая принимает строку в качестве аргумента и выводит количество гласных в этой строке. </p>
+</body>
+
+</html>

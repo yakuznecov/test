@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Reverse массива</title>
+	<style>
+
+	</style>
+
+	<script type="text/javascript">
+		let a = [2, 5, 12, 3, 78, 90];
+		let b = [1, 2, 3, 4, 5];
+
+		// console.log(a.reverse()); самый простой способ
+
+		function r1(a) {
+			return a.reverse();
+		}
+
+		console.log(r1(a));
+
+		// медленный способ
+		function r2(a) {
+			res = [];
+			a.forEach(element => {
+				res.unshift(element);
+			});
+			return res;
+		}
+		console.log(r2(b));
+
+		// 3-й способ
+		function r3(a) {
+			res = [];
+			for (let i = a.length - 1; i >= 0; i--) {
+				res.push(a[i]);
+			}
+			return res;
+		}
+		console.log(r3(b));
+	</script>
+</head>
+
+<body>
+	<h2>Сменить порядок элементов в массиве на обратный</h2>
+</body>
+
+</html>

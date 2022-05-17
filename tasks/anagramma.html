@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Анаграмма</title>
+	<style>
+
+	</style>
+
+	<script type="text/javascript">
+		anagram('friend', 'Finder'); // true
+		anagram('hello', 'bye'); // false
+
+		function buildCharObject(str) {
+			const charObj = {};
+			str = str.toLowerCase().replace(/[^\w]/g); // это любая цифра, буква или знак подчеркивания
+			for (let char of str) {
+				charObj[char] = charObj[char] + 1 || 1;
+			}
+
+			return charObj;
+		}
+
+		function anagram(strA, strB) {
+			const aCharObj = buildCharObject(strA);
+			const bCharObj = buildCharObject(strB);
+
+			if (Object.keys(aCharObj).length !== Object.keys(bCharObj).length) {
+				return false;
+			}
+
+			for (let char in aCharObj) {
+				if (aCharObj[char] !== bCharObj[char]) {
+					return false;
+				}
+			}
+			return true;
+		}
+
+		console.log(anagram('friend', 'Finder')); // true
+
+		// 2-й вариант в одну строку
+		const anagram2 = (a, b) => [...a.toLowerCase()].sort().toString() === [...b.toLowerCase()].sort().toString(); // сортировка происходит одинаково в строках
+	</script>
+</head>
+
+<body>
+	<h2>Анаграмма — это перестановка букв слова, посредством которой из одного слова составляется другое</h2>
+	<p>Помимо того, что это очень популярная задача на собеседованиях, ее алгоритм применяется часто и в работе. Например, в интернет-магазине для удаления дубликатов из списка заказов сравнивают 2
+		заказа, внутри которых товары идут в случайном порядке, и так понимают, что это один и тот же заказ. Полезный алгоритм на самом деле.</p>
+</body>
+
+</html>
