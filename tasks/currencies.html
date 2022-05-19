@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Валюты</title>
+	<style>
+
+	</style>
+
+	<script type="text/javascript">
+		const input = [
+			['usd', 'buy', 10000],
+			['usd', 'sell', 5000],
+			['gbp', 'buy', 9000],
+			['eur', 'sell', 7000],
+			['uah', 'buy', 10000],
+			['usd', 'sell', 25000],
+		];
+
+		let result = {}; // для готового результата
+
+		input.forEach((item) => {
+			let [currency, type, amount] = item;
+
+			// если в массиве нет элемента, то мы его создаем с нулевыми значениями
+			if (!result[currency]) {
+				result[currency] = [0, 0];
+			}
+
+			result[currency][type === 'buy' ? 0 : 1] += amount;
+		})
+
+		console.log(result);
+
+		// 2 вариант
+		let result2 = input.reduce((acc, curr) => {
+			acc[curr[0]] = acc[curr[0]] || [0, 0];
+			acc[curr[0]][curr[1] === 'buy' ? 0 : 1] += curr[2];
+			return acc;
+		}, {});
+
+		// 3 вариант
+		let countCash = (transactions) => {
+			let result = {};
+			for (let i = 0; i < transactions.length; i++) {
+				let current = transactions[i][0];
+				if (!result[current]) {
+					result[current] = [0, 0];
+				}
+				transactions[i][1] === "buy" ? result[current][0] += transactions[i][2] : result[current][1] += transactions[i][2];
+			}
+			return result;
+		}
+
+		// 4 вариант 
+		var output = input.reduce((output, [currency, operation, value]) => {
+			const cursorOperation = operation === 'buy' ? 0 : 1;
+			output[currency] = output[currency] || [0, 0];
+			output[currency][cursorOperation] += value;
+			return output;
+		}, {});
+	</script>
+</head>
+
+<body>
+	<h2>Валюты</h2>
+	<p>Это задача про валютные транзакции за день. Нам необходимо из массива всех валютных операций за день создать объект с суммами всех операций по каждой валюте. Мы рассмотрим два варианта решения:
+		с использованием цикла forEach и с использованием метода reduce. </p>
+</body>
+
+</html>

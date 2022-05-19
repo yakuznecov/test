@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>fibonacci</title>
+	<style>
+
+	</style>
+
+	<script type="text/javascript">
+		// решение через цикл избыточный
+		function fibonacci(num) {
+			const result = [0, 1];
+
+			for (let i = 2; i <= num; i++) {
+				const prevNum1 = result[i - 1];
+				const prevNum2 = result[i - 2];
+				result.push(prevNum1 + prevNum2);
+			}
+
+			return result[num];
+		}
+
+		console.log(fibonacci(7));
+
+		// решение через цикл оптимальное
+		function fibonacciShort(num) {
+			let a = 1,
+				b = 1;
+
+			// первые 2 числа вычислены, поэтому на третью позицию
+			for (let i = 3; i <= num; i++) {
+				[a, b] = [b, a + b];
+			}
+
+			return b;
+		}
+
+		console.log(fibonacciShort(2));
+
+		// решение c рекурсией
+		function fibonacci2(num) {
+			if (num < 2) {
+				return num;
+			}
+
+			return fibonacci2(num - 1) + fibonacci2(num - 2);
+		}
+
+		console.log(fibonacci2(10));
+
+		// сохранение промежуточных значений, мемоизация
+		const res = [0, 1];
+		function fibonacci3(n) {
+			if (!res[n]) {
+				if (n <= 1) {
+					res[n] = n;
+				} else {
+					res[n] = fibonacci3(n - 1) + fibonacci3(n - 2);
+				}
+			}
+
+			return res[n];
+		}
+
+		console.log(fibonacci3(9));
+
+		// медленная рекурсия
+		function fibonacci4(n) {
+			return (n < 2) ? n : fibonacci4(n - 1) + fibonacci4(n - 2);
+		}
+
+		console.log(fibonacci4(11));
+
+		// Быстрая рекурсия
+		function fibonacci5(n, a = 0, b = 1) {
+			return (n === 1) ? b : fibonacci5(n - 1, b, a + b);
+		}
+
+		console.log(fibonacci5(12));
+	</script>
+</head>
+
+<body>
+	<p>рассмотрим 3 варианта решения задачи по поиску чисел из последовательности Фибоначчи: через цикл избыточный, через цикл оптимальный и через рекурсию. </p>
+	<p>Вариант с рекурсией часто спрашивают на собеседованиях. И используют для изучения самой рекурсии, т.к. для того чтобы понять, что такое рекурсия — надо знать, что такое рекурсия :).</p>
+	<p>Вариант решения через цикл будет работать значительно быстрее варианта с рекурсией. Учтите этот момент.</p>
+</body>
+
+</html>

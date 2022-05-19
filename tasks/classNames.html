@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>classNames</title>
+	<style>
+
+	</style>
+
+	<script type="text/javascript">
+		let classNames = ['header', 'menu', 'menu-item', 'menu-item', 'footer', 'menu', 'link', 'link', 'link', 'link'];
+
+		let classNamesCount = {}; // создаем объект, куда будем складывать ключи и значения
+
+		for (let i = 0; i < classNames.length; i++) {
+			let current = classNames[i];
+			if (classNamesCount[current]) {
+				classNamesCount[current] += 1; // если есть элемент в массиве, то добавляем 1
+			} else {
+				classNamesCount[current] = 1;
+			}
+		}
+
+		let result = Object.keys(classNamesCount).sort((a, b) => classNamesCount[b] - classNamesCount[a]); // список уникальных значений получили
+		console.log(result);
+
+		// 2-й вариант
+		const classNames2 = [
+			'header', 'menu', 'menu-item', 'menu-item', 'menu-item', 'footer', 'menu', 'link', 'link', 'link', 'link'
+		]
+
+		const classesRating = classArr => {
+
+			const classObject = {} // пустой объект для формирования пары ключ/значение.
+
+			classArr.forEach(item => classObject[item] = classObject[item] + 1 || 1) // формируем объект, в котором ключ - наименование класса, значение - кол-во нахождений данного класса в массиве.
+
+			const result = Object
+				.entries(classObject) // формируем из объекта формат entries - двумерный массив, в котором каждый подмассив хранит два элемента, первый - ключ объета, второй - его значение. 
+
+				// Далее используем цепочку методов массива для получения нужного результата:
+
+				.sort((a, b) => b[1] - a[1]) // сортируем подмассивы по убыванию с помощью второго элемента, поскольку именно в нём содержится числовое значение ключа - кол-во нахождений каждого класса.
+				.flat() // преобразовываем двумерный массив в одномерный.
+				.filter(item => isNaN(item)) // избавляемся от числовых значений в массиве.
+
+			return result  // возвращаем результирующий массив.
+		}
+
+		console.log(classesRating(classNames2)) // выводим результат работы функции classesRating в консоль
+	</script>
+</head>
+
+<body>
+	<h2>ClassNames</h2>
+	<p>Есть собранный список классов со страницы. Получить в результате список классов, отсортированный по частоте использования. Самые частый в начале.</p>
+</body>
+
+</html>
