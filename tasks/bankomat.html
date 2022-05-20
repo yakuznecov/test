@@ -11,7 +11,79 @@
 	</style>
 
 	<script type="text/javascript">
+		//REQUIREMENTS:
+		// 1. Always deliver the lowest number of possible notes;
+		// 2. It's possible to get the amount requested with available notes;
+		// 3. The client balance is infinite;
+		// 4. Amount of notes is infinite;
+		// 5. Available notes 100, 50, 20 10
 
+		function iWantToGet(amountRequired) {
+			const availableNotes = [100, 50, 20, 10];
+			const result = []; // будем хранить банкноты, которые необходимо выдать
+
+			if (amountRequired > 0) {
+				for (let i = 0; i < availableNotes.length; i++) {
+					let note = availableNotes[i];
+
+					while (amountRequired - note >= 0) {
+						amountRequired -= note;
+						result.push(note);
+					}
+				}
+			} else {
+				console.log('Введите новую сумму');
+			}
+
+			return result;
+		}
+
+		console.log(iWantToGet(190)); // 100, 50, 20, 20
+
+		// 2 вариант
+		function iWantToGet2(ammountRequired) {
+			const values = [100, 50, 20, 10];
+			const result = {};
+
+			for (let item of values) {
+				if (ammountRequired >= item) {
+					result[item] = Math.floor(ammountRequired / item);
+					ammountRequired %= item;
+				}
+				if (ammountRequired === 0) {
+					break;
+				}
+			}
+
+			return result
+		};
+
+		console.log(iWantToGet2(490));
+
+		// 3 вариант
+		function bank(val) {
+			const result = {};
+			const bills = [100, 50, 20, 10];
+			for (const bill of bills) {
+				if (!Math.floor(val / bill)) {
+					continue
+				}
+				result[bill] = Math.floor(val / bill);
+				val %= bill;
+				if (!val) { break }
+			}
+			return result
+		}
+		console.log(bank(160))
+
+		// 4 вариант
+		function iWantToGet(sum) {
+			return [100, 50, 20, 10].map((banknote) => {
+				const amount = (sum / banknote) >> 0; // побитовые операции
+				sum -= amount * banknote;
+				return amount;
+			});
+		}
 	</script>
 </head>
 
