@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Cлушатель на каждую кнопку в каждом блоке</title>
+	<style>
+		.box {
+			position: relative;
+			width: 150px;
+		}
+
+		input {
+			width: 100%;
+		}
+
+		.input-icon {
+			position: absolute;
+			top: 6px;
+			right: 0;
+			width: 10px;
+			height: 10px;
+			background-color: red;
+		}
+
+		.view {
+			background-color: blue;
+		}
+	</style>
+
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+			const blocks = document.querySelectorAll('.box');
+			console.log(blocks);
+
+			blocks.forEach((blk) => {
+				console.log(blk);
+				const inputIcon = blk.querySelector('.input-icon');
+
+
+				inputIcon.addEventListener('click', (e) => {
+					const inputPass = blk.querySelector('.pass');
+					e.preventDefault();
+					console.log(e.target);
+					if (inputPass.getAttribute('type') == 'password') {
+						inputIcon.classList.add('view');
+						inputPass.setAttribute('type', 'text');
+					} else {
+						inputIcon.classList.remove('view');
+						inputPass.setAttribute('type', 'password');
+					}
+				})
+			})
+		});
+
+	</script>
+</head>
+
+<body>
+	<h1>Cлушатель на каждую кнопку в каждом блоке отдельно</h1>
+
+	<div class="box">
+		<input type="password" value="Password" class="pass">
+		<a href="#" class="input-icon"></a>
+	</div>
+
+	<div class="box">
+		<input type="password" value="Password" class="pass">
+		<a href="#" class="input-icon"></a>
+	</div>
+</body>
+
+</html>
