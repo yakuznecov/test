@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<title>Accordion-2</title>
+	<style>
+		/* Import Google Font - Poppins */
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+		*,
+		*:before,
+		*:after {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		.container {
+			width: 45%;
+			min-width: 500px;
+			position: absolute;
+			transform: translate(-50%, -50%);
+			top: 50%;
+			left: 50%;
+		}
+
+		.accordion-wrapper {
+			margin-bottom: 11px;
+			border-radius: 15px;
+			overflow: hidden;
+			background-color: #f4f4f4;
+		}
+
+		.accordion-toggle {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			text-align: left;
+			border: none;
+			outline: none;
+			font-size: 16px;
+			line-height: 22px;
+			font-weight: 500;
+			cursor: pointer;
+			padding: 24px 24px 24px 34px;
+		}
+
+		.accordion-toggle span {
+			display: flex;
+			margin-left: 12px;
+		}
+
+		.accordion-icon {
+			transition: transform 0.5s ease-out;
+		}
+
+		.accordion-icon.active {
+			transform: rotate(45deg);
+		}
+
+		.accordion-content {
+			position: relative;
+			font-size: 14px;
+			font-weight: 300;
+			text-align: justify;
+			line-height: 18px;
+			height: 0;
+			overflow: hidden;
+			transition: all 0.5s;
+		}
+
+		.accordion-content p {
+			padding: 0 24px 16px 34px;
+		}
+	</style>
+
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+			const toggles = document.querySelectorAll('.accordion-toggle');
+			const content = document.querySelectorAll('.accordion-content');
+			const icons = document.querySelectorAll('.accordion-icon');
+
+			for (let i = 0; i < toggles.length; i++) {
+				toggles[i].addEventListener('click', () => {
+					if (parseInt(content[i].style.height) != content[i].scrollHeight) {
+						content[i].style.height = content[i].scrollHeight + 'px';
+						icons[i].classList.add('active');
+					} else {
+						content[i].style.height = '0px';
+						icons[i].classList.remove('active');
+					}
+
+					for (let j = 0; j < content.length; j++) {
+						if (j !== i) {
+							content[j].style.height = '0px';
+							icons[j].classList.remove('active');
+						}
+					}
+				});
+			}
+		});
+
+	</script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="help__center-accordion">
+			<div class="accordion-wrapper">
+				<button class="accordion-toggle">
+					What should I do if I forgot my email to log in to my account?
+					<span><img class="accordion-icon" src="../img/delete-20.svg" alt="icon"></span>
+				</button>
+				<div class="accordion-content">
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta aliquam facere adipisci quod mollitia, aut nemo deleniti fugiat et, corrupti sequi. Omnis dolorem quos
+						eligendi placeat soluta sint corrupti quod.</p>
+				</div>
+			</div>
+			<div class="accordion-wrapper">
+				<button class="accordion-toggle">
+					How can I get an answer to my question from the support service as quickly as possible?
+					<span><img class="accordion-icon" src="../img/delete-20.svg" alt="icon"></span>
+				</button>
+				<div class="accordion-content">
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, illo! At possimus pariatur vitae ipsum, placeat eius assumenda odit reiciendis, alias quo beatae adipisci
+						similique molestias repellat omnis voluptatum laudantium!
+						Ipsa fugiat repudiandae, dolor consequuntur deserunt inventore! Quis fugit officiis laudantium quisquam id eos quo aliquam voluptates nihil, nemo eligendi error
+						architecto laboriosam dignissimos natus culpa! Nostrum ipsa excepturi sapiente.
+					</p>
+				</div>
+			</div>
+			<div class="accordion-wrapper">
+				<button class="accordion-toggle">
+					How can I get an answer to my question from the support service as quickly as possible?
+					<span><img class="accordion-icon" src="../img/delete-20.svg" alt="icon"></span>
+				</button>
+				<div class="accordion-content">
+					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat necessitatibus rem minima quia et? Reiciendis excepturi, beatae facere libero eos aliquam molestiae
+						voluptatibus quod architecto nisi eveniet, enim delectus a.
+						Optio minus repellendus maiores eos veniam accusantium doloremque, cupiditate tenetur tempore odio necessitatibus, laborum, omnis itaque officia enim ratione labore sed
+						autem. Cum, blanditiis molestiae? Dicta velit natus sint corrupti!
+						Hic, quisquam sunt optio repellat aliquam mollitia facere nam ea vitae, voluptatem soluta culpa saepe similique exercitationem illum odit placeat dolorem id? Quas
+						nostrum illum perspiciatis quod exercitationem illo facere.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
