@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>speed</title>
+	<style>
+		html {
+			box-sizing: border-box;
+		}
+
+		*,
+		*::before,
+		*::after {
+			box-sizing: inherit;
+		}
+
+		a {
+			text-decoration: none;
+			color: inherit;
+		}
+
+		body {
+			margin: 0;
+
+		}
+
+		.wrapper {
+			width: 100%;
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.speed {
+			position: relative;
+			width: 440px;
+			height: 440px;
+		}
+
+		.dial__box {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.dial {
+			position: absolute;
+			display: block;
+			width: 56px;
+			height: 176px;
+			top: 20%;
+			transform: rotate(45deg);
+			transform-origin: 27px 147px;
+			transition: all 2s;
+		}
+	</style>
+
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', () => {
+			const interval = 4000;
+			const min = -115;
+			const max = 115;
+
+			const dial = document.querySelector('.dial');
+			const meter = document.querySelector('.meter');
+
+			const green = 'rgba(60, 179, 113, .2)';
+			const yellow = 'rgba(255, 165, 0, .2)';
+			const red = 'rgba(255, 0, 0, .2)';
+
+			function setSpeed(speed) {
+				dial.style.transform = `rotate(${speed}deg)`;
+			}
+
+			function setBackground(speed) {
+				let color;
+				if (speed >= -120 && speed <= -40) {
+					color = green;
+				} else if (speed >= -41 && speed <= 40) {
+					color = yellow;
+				} else {
+					color = red;
+				}
+				meter.style.backgroundColor = color;
+			}
+
+			function getRandomArbitrary() {
+				return Math.floor(Math.random() * (max - min) + min);
+			}
+
+			function runSpeedometer() {
+				const speed = getRandomArbitrary();
+				setSpeed(speed);
+				setBackground(speed);
+			}
+
+			setInterval(runSpeedometer, interval)
+		});
+	</script>
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="speed">
+			<img class="meter" src="img/meter.png" alt="meter">
+			<div class="dial__box">
+				<img class="dial" src="img/dial.png" alt="dial">
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
