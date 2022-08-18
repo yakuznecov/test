@@ -20,6 +20,11 @@ console.log(myNums.reduce((total, value) => total * value)); // результа
 
 console.log(myArr.reduce((t, s) => t + ',' + s));
 
+// Сложить массивы
+const sumCountersOfAppearance = (...counters) => {
+	return [].concat(...counters).reduce((a, b) => a + b, 0);
+};
+
 // every
 // возвращает истину, если все элементы массива удовлетворяют одному условию
 

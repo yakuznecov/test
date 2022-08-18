@@ -69,7 +69,7 @@ const restaurant = {
 		console.log(`Here is your declicious pasta with ${ing1}, ${ing2} and ${ing3}`);
 	},
 
-	orderPizza: function (mainIngredient, ...otherIngredient) {},
+	orderPizza: function (mainIngredient, ...otherIngredient) { },
 };
 
 restaurant.orderDelivery({
@@ -210,4 +210,45 @@ const entries = Object.entries(openingHours); // перебор всего об�
 
 for (const [day, { open, close }] of entries) {
 	console.log(`On ${day} we open at ${open} and close at ${close}`);
+}
+
+
+// Вы получаете массив чисел, возвращаете сумму всех положительных чисел.
+// если суммировать нечего, сумма по умолчанию равна 0.
+// Example [1,-4,7,12] => 1 + 7 + 12 = 20
+function positiveSum(arr) {
+	let sum = 0;
+
+	for (let i = 0; i < arr.length; i++) {
+		if (arr[i] > 0) {
+			sum += arr[i];
+		}
+	}
+	return sum;
+}
+
+function positiveSum(arr) {
+	return arr.reduce((a, b) => a + (b > 0 ? b : 0), 0);
+}
+
+const positiveSum = (arr) => arr.reduce((sum, number) => n > 0 ? sum + number : sum, 0);
+
+// Текст полностью преобразован символом, который приходит в функцию
+// text before = "abc"
+// character   = "z"
+// text after  = "zzz"
+function contamination(text, char) {
+	return char.repeat(text.length);
+}
+
+// Напишите функцию для преобразования имени в инициалы. Выходные данные должны состоять из двух заглавных букв с разделяющей их точкой.
+// Sam Harris => S.H
+function abbrevName(name) {
+
+	let nameArray = name.split(" ");
+	return (nameArray[0][0] + "." + nameArray[1][0]).toUpperCase();
+}
+
+function abbrevName(name) {
+	return name.split(' ').map(i => i[0].toUpperCase()).join('.')
 }

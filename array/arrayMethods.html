@@ -35,7 +35,7 @@
 			'Дмитрий, Кедрин', 'Василий, Шукшин'];
 
 
-		
+
 		// Array.prototype.filter()
 		// 1. Отфильтровать президентов которые родились в 1700-х годах.
 		const born1700 = presidents.filter(president => president.born >= 1700 && president.born < 1800);
@@ -48,21 +48,16 @@
 		const firstLast = presidents.map(president => `${president.first}, ${president.last}`);
 		console.log(firstLast);
 
-
 		// Array.prototype.sort()
 		// 3. Отсортировать президентов по году рождения - от старшего к младшему 
 		const oldest = presidents.sort((a, b) => `${a.born > b.born ? 1 : -1}`);
 		// console.table(oldest);
-
-
 
 		// Array.prototype.reduce() (всегда нужно задавать начальное значение)
 		// 4. Подсчитать общее количество лет жизни всех президентов
 		const totalLived = presidents.reduce((total, president) => total + (president.died - president.born), 0);
 
 		// console.log(totalLived); // 952
-
-
 
 		// 5. Отсортировать президентов в зависимости от количества прожитых лет (от большего к меньшему)
 		const presidentsSorted = presidents.sort((a, b) => {
