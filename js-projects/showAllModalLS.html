@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>File Downloader in JavaScript</title>
+	<style>
+		/* Import Google Font - Poppins */
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Poppins', sans-serif;
+		}
+
+		body {
+			display: flex;
+			padding: 0 10px;
+			align-items: center;
+			justify-content: center;
+			min-height: 100vh;
+		}
+
+		.wrapper {
+			border-radius: 7px;
+			padding: 20px 25px 15px;
+			box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+		}
+
+		.overlay__hint {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.5);
+			z-index: 20;
+			transition: .4s all;
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		.overlay__hint.show {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.hint {
+			position: fixed;
+			top: 20vh;
+			left: calc(50% - 100px);
+			padding: 8px 12px;
+			font-size: 14px;
+			max-width: 200px;
+			line-height: 22px;
+			font-weight: 500;
+			background-color: #f4f4f4;
+			border-radius: 8px;
+			z-index: 30;
+			animation: hint-show 3s ease-out forwards;
+			transition: all 0.4s;
+			margin-bottom: 8px;
+		}
+
+		.hidden {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		.skip_btn {
+			position: absolute;
+			right: 24px;
+			top: 0;
+			padding: 0 24px;
+			z-index: 30;
+			background-color: #fff;
+			color: #000;
+			font-weight: 700;
+			transition: all 1s;
+		}
+
+		@keyframes hint-show {
+			from {
+				transform: translateY(48px);
+			}
+
+			to {
+				transform: translateY(0);
+			}
+		}
+	</style>
+
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function () {
+			const hints = document.querySelectorAll('.hint');
+			const overlay = document.querySelector('.overlay__hint');
+			const skipBtn = document.querySelector('.skip_btn');
+
+			const showHints = () => {
+				overlay.classList.add('show');
+				skipBtn.classList.remove('hidden');
+				hints.forEach(hint => {
+					hint.classList.remove('hidden');
+				})
+			}
+
+			const hideHints = () => {
+				overlay.classList.remove('show');
+				skipBtn.classList.add('hidden');
+				hints.forEach(hint => {
+					hint.classList.add('hidden');
+				})
+			}
+
+			// if (localStorage.getItem('hints') === 'showed') {
+			// 	hideHints();
+			// } else {
+			// 	setTimeout(showHints, 2000);
+			// }
+
+			setTimeout(showHints, 2000);
+
+			skipBtn.addEventListener('click', () => {
+				localStorage.setItem('hints', 'showed');
+				hideHints();
+			});
+		});
+
+	</script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class='hint hidden'>В разделе "Create" ты можешь создавать свои галереи. От NFT до галерей с фото и видео для обычной подписки.</div>
+		<div class='hint hidden'>В разделе "Create" ты можешь создавать свои галереи. От NFT до галерей с фото и видео для обычной подписки.</div>
+
+		<div class="overlay__hint"></div>
+		<button class="skip_btn primary__btn hidden">SKIP HINTS</button>
+	</div>
+</body>
+
+</html>
